@@ -12,4 +12,12 @@ compile:
 	--overwrite \
 	-o bin/vendorManagement \
 	contracts/VendorManagement.sol
-	# compile
+	# compile vendor factory
+	solc \
+	--optimize \
+	--optimize-runs 200 \
+	--bin \
+	--abi \
+	--overwrite \
+	-o bin/vendorFactory \
+	contracts/VendorFac
