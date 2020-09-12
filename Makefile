@@ -35,4 +35,7 @@ compile:
 bindings:
 	# build bindings for vendor management
 	abigen \
-	--abi bin/vendorM
+	--abi bin/vendorManagement/VendorManagement.abi \
+	--bin bin/vendorManagement/VendorManagement.bin \
+	--pkg vendormanagement \
+	--out bindings/vendorManag
