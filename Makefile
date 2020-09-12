@@ -20,4 +20,12 @@ compile:
 	--abi \
 	--overwrite \
 	-o bin/vendorFactory \
-	contracts/VendorFac
+	contracts/VendorFactory.sol
+	# compile vending machine
+	solc \
+	--optimize \
+	--optimize-runs 200 \
+	--bin \
+	--abi \
+	--overwrite \
+	-o bin
