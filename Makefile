@@ -28,4 +28,11 @@ compile:
 	--bin \
 	--abi \
 	--overwrite \
-	-o bin
+	-o bin/vendingMachine \
+	contracts/VendingMachine.sol
+
+.PHONY: bindings
+bindings:
+	# build bindings for vendor management
+	abigen \
+	--abi bin/vendorM
