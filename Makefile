@@ -49,4 +49,10 @@ bindings:
 	abigen \
 	--abi bin/vendingMachine/VendingMachine.abi \
 	--bin bin/vendingMachine/VendingMachine.bin \
-	--pkg vendingmachin
+	--pkg vendingmachine \
+	--out bindings/vendingMachine/bindings.go
+
+# run standard go tooling for better readability
+.PHONY: tidy
+tidy: imports fmt
+	go
