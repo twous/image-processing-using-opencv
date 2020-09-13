@@ -38,4 +38,8 @@ bindings:
 	--abi bin/vendorManagement/VendorManagement.abi \
 	--bin bin/vendorManagement/VendorManagement.bin \
 	--pkg vendormanagement \
-	--out bindings/vendorManag
+	--out bindings/vendorManagement/bindings.go
+	# build bindings for vendor factory
+	abigen \
+	--abi bin/vendorFactory/VendorFactory.abi \
+	--bin bin/vend
