@@ -46,4 +46,7 @@ bindings:
 	--pkg vendorfactory \
 	--out bindings/vendorFactory/bindings.go
 	# build bindings for vending machine
-	abig
+	abigen \
+	--abi bin/vendingMachine/VendingMachine.abi \
+	--bin bin/vendingMachine/VendingMachine.bin \
+	--pkg vendingmachin
