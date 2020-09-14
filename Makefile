@@ -61,4 +61,11 @@ tidy: imports fmt
 # automatically add missing imports
 .PHONY: imports
 imports:
-	find . -type f -name '*.go' -exec goim
+	find . -type f -name '*.go' -exec goimports -w {} \;
+
+# format code and simplify if possible
+.PHONY: fmt
+fmt:
+	find . -type f -name '*.go' -exec gofmt -s -w {} \;
+
+.PHONY: int
