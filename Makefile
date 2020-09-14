@@ -68,4 +68,7 @@ imports:
 fmt:
 	find . -type f -name '*.go' -exec gofmt -s -w {} \;
 
-.PHONY: int
+.PHONY: interfaces
+interfaces:
+# uncomment to regenerate, this will wipe some nice settings
+#	/home/solidity/.npm-global/bin/abi
