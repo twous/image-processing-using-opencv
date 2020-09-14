@@ -55,4 +55,10 @@ bindings:
 # run standard go tooling for better readability
 .PHONY: tidy
 tidy: imports fmt
-	go
+	go vet ./...
+	golint ./...
+
+# automatically add missing imports
+.PHONY: imports
+imports:
+	find . -type f -name '*.go' -exec goim
