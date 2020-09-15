@@ -71,4 +71,4 @@ fmt:
 .PHONY: interfaces
 interfaces:
 # uncomment to regenerate, this will wipe some nice settings
-#	/home/solidity/.npm-global/bin/abi
+#	/home/solidity/.npm-global/bin/abi2solidity --input bin/vendorManagement/VendorManagement.abi --output contracts/Interfaces/VendorManagementI.sol
