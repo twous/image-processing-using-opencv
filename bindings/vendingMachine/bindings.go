@@ -176,3 +176,134 @@ func (_Vendingmachine *VendingmachineRaw) Transact(opts *bind.TransactOpts, meth
 // returns, a slice of interfaces for anonymous returns and a struct for named
 // returns.
 func (_Vendingmachine *VendingmachineCallerRaw) Call(opts *bind.CallOpts, result interface{}, method string, params ...interface{}) error {
+	return _Vendingmachine.Contract.contract.Call(opts, result, method, params...)
+}
+
+// Transfer initiates a plain transaction to move funds to the contract, calling
+// its default method if one is available.
+func (_Vendingmachine *VendingmachineTransactorRaw) Transfer(opts *bind.TransactOpts) (*types.Transaction, error) {
+	return _Vendingmachine.Contract.contract.Transfer(opts)
+}
+
+// Transact invokes the (paid) contract method with params as input values.
+func (_Vendingmachine *VendingmachineTransactorRaw) Transact(opts *bind.TransactOpts, method string, params ...interface{}) (*types.Transaction, error) {
+	return _Vendingmachine.Contract.contract.Transact(opts, method, params...)
+}
+
+// Backend is a free data retrieval call binding the contract method 0x099e4133.
+//
+// Solidity: function backend() constant returns(address)
+func (_Vendingmachine *VendingmachineCaller) Backend(opts *bind.CallOpts) (common.Address, error) {
+	var (
+		ret0 = new(common.Address)
+	)
+	out := ret0
+	err := _Vendingmachine.contract.Call(opts, out, "backend")
+	return *ret0, err
+}
+
+// Backend is a free data retrieval call binding the contract method 0x099e4133.
+//
+// Solidity: function backend() constant returns(address)
+func (_Vendingmachine *VendingmachineSession) Backend() (common.Address, error) {
+	return _Vendingmachine.Contract.Backend(&_Vendingmachine.CallOpts)
+}
+
+// Backend is a free data retrieval call binding the contract method 0x099e4133.
+//
+// Solidity: function backend() constant returns(address)
+func (_Vendingmachine *VendingmachineCallerSession) Backend() (common.Address, error) {
+	return _Vendingmachine.Contract.Backend(&_Vendingmachine.CallOpts)
+}
+
+// Location is a free data retrieval call binding the contract method 0x516f279e.
+//
+// Solidity: function location() constant returns(string)
+func (_Vendingmachine *VendingmachineCaller) Location(opts *bind.CallOpts) (string, error) {
+	var (
+		ret0 = new(string)
+	)
+	out := ret0
+	err := _Vendingmachine.contract.Call(opts, out, "location")
+	return *ret0, err
+}
+
+// Location is a free data retrieval call binding the contract method 0x516f279e.
+//
+// Solidity: function location() constant returns(string)
+func (_Vendingmachine *VendingmachineSession) Location() (string, error) {
+	return _Vendingmachine.Contract.Location(&_Vendingmachine.CallOpts)
+}
+
+// Location is a free data retrieval call binding the contract method 0x516f279e.
+//
+// Solidity: function location() constant returns(string)
+func (_Vendingmachine *VendingmachineCallerSession) Location() (string, error) {
+	return _Vendingmachine.Contract.Location(&_Vendingmachine.CallOpts)
+}
+
+// VendorContracts is a free data retrieval call binding the contract method 0xa46ead24.
+//
+// Solidity: function vendorContracts(address ) constant returns(address)
+func (_Vendingmachine *VendingmachineCaller) VendorContracts(opts *bind.CallOpts, arg0 common.Address) (common.Address, error) {
+	var (
+		ret0 = new(common.Address)
+	)
+	out := ret0
+	err := _Vendingmachine.contract.Call(opts, out, "vendorContracts", arg0)
+	return *ret0, err
+}
+
+// VendorContracts is a free data retrieval call binding the contract method 0xa46ead24.
+//
+// Solidity: function vendorContracts(address ) constant returns(address)
+func (_Vendingmachine *VendingmachineSession) VendorContracts(arg0 common.Address) (common.Address, error) {
+	return _Vendingmachine.Contract.VendorContracts(&_Vendingmachine.CallOpts, arg0)
+}
+
+// VendorContracts is a free data retrieval call binding the contract method 0xa46ead24.
+//
+// Solidity: function vendorContracts(address ) constant returns(address)
+func (_Vendingmachine *VendingmachineCallerSession) VendorContracts(arg0 common.Address) (common.Address, error) {
+	return _Vendingmachine.Contract.VendorContracts(&_Vendingmachine.CallOpts, arg0)
+}
+
+// VendorNames is a free data retrieval call binding the contract method 0x2c62204c.
+//
+// Solidity: function vendorNames(string ) constant returns(address)
+func (_Vendingmachine *VendingmachineCaller) VendorNames(opts *bind.CallOpts, arg0 string) (common.Address, error) {
+	var (
+		ret0 = new(common.Address)
+	)
+	out := ret0
+	err := _Vendingmachine.contract.Call(opts, out, "vendorNames", arg0)
+	return *ret0, err
+}
+
+// VendorNames is a free data retrieval call binding the contract method 0x2c62204c.
+//
+// Solidity: function vendorNames(string ) constant returns(address)
+func (_Vendingmachine *VendingmachineSession) VendorNames(arg0 string) (common.Address, error) {
+	return _Vendingmachine.Contract.VendorNames(&_Vendingmachine.CallOpts, arg0)
+}
+
+// VendorNames is a free data retrieval call binding the contract method 0x2c62204c.
+//
+// Solidity: function vendorNames(string ) constant returns(address)
+func (_Vendingmachine *VendingmachineCallerSession) VendorNames(arg0 string) (common.Address, error) {
+	return _Vendingmachine.Contract.VendorNames(&_Vendingmachine.CallOpts, arg0)
+}
+
+// Vendors is a free data retrieval call binding the contract method 0x27e30c36.
+//
+// Solidity: function vendors(address ) constant returns(bool)
+func (_Vendingmachine *VendingmachineCaller) Vendors(opts *bind.CallOpts, arg0 common.Address) (bool, error) {
+	var (
+		ret0 = new(bool)
+	)
+	out := ret0
+	err := _Vendingmachine.contract.Call(opts, out, "vendors", arg0)
+	return *ret0, err
+}
+
+// Vendors is a free data retrieval call binding the contract method 0x27e30c36.
