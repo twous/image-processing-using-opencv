@@ -307,3 +307,124 @@ func (_Vendingmachine *VendingmachineCaller) Vendors(opts *bind.CallOpts, arg0 c
 }
 
 // Vendors is a free data retrieval call binding the contract method 0x27e30c36.
+//
+// Solidity: function vendors(address ) constant returns(bool)
+func (_Vendingmachine *VendingmachineSession) Vendors(arg0 common.Address) (bool, error) {
+	return _Vendingmachine.Contract.Vendors(&_Vendingmachine.CallOpts, arg0)
+}
+
+// Vendors is a free data retrieval call binding the contract method 0x27e30c36.
+//
+// Solidity: function vendors(address ) constant returns(bool)
+func (_Vendingmachine *VendingmachineCallerSession) Vendors(arg0 common.Address) (bool, error) {
+	return _Vendingmachine.Contract.Vendors(&_Vendingmachine.CallOpts, arg0)
+}
+
+// AddVendor is a paid mutator transaction binding the contract method 0x4fc61198.
+//
+// Solidity: function addVendor(string _name, address _vendorContract) returns(bool)
+func (_Vendingmachine *VendingmachineTransactor) AddVendor(opts *bind.TransactOpts, _name string, _vendorContract common.Address) (*types.Transaction, error) {
+	return _Vendingmachine.contract.Transact(opts, "addVendor", _name, _vendorContract)
+}
+
+// AddVendor is a paid mutator transaction binding the contract method 0x4fc61198.
+//
+// Solidity: function addVendor(string _name, address _vendorContract) returns(bool)
+func (_Vendingmachine *VendingmachineSession) AddVendor(_name string, _vendorContract common.Address) (*types.Transaction, error) {
+	return _Vendingmachine.Contract.AddVendor(&_Vendingmachine.TransactOpts, _name, _vendorContract)
+}
+
+// AddVendor is a paid mutator transaction binding the contract method 0x4fc61198.
+//
+// Solidity: function addVendor(string _name, address _vendorContract) returns(bool)
+func (_Vendingmachine *VendingmachineTransactorSession) AddVendor(_name string, _vendorContract common.Address) (*types.Transaction, error) {
+	return _Vendingmachine.Contract.AddVendor(&_Vendingmachine.TransactOpts, _name, _vendorContract)
+}
+
+// BackendPurchaseProduct is a paid mutator transaction binding the contract method 0x1d3bc57b.
+//
+// Solidity: function backendPurchaseProduct(string _vendor, string _product) returns(bool)
+func (_Vendingmachine *VendingmachineTransactor) BackendPurchaseProduct(opts *bind.TransactOpts, _vendor string, _product string) (*types.Transaction, error) {
+	return _Vendingmachine.contract.Transact(opts, "backendPurchaseProduct", _vendor, _product)
+}
+
+// BackendPurchaseProduct is a paid mutator transaction binding the contract method 0x1d3bc57b.
+//
+// Solidity: function backendPurchaseProduct(string _vendor, string _product) returns(bool)
+func (_Vendingmachine *VendingmachineSession) BackendPurchaseProduct(_vendor string, _product string) (*types.Transaction, error) {
+	return _Vendingmachine.Contract.BackendPurchaseProduct(&_Vendingmachine.TransactOpts, _vendor, _product)
+}
+
+// BackendPurchaseProduct is a paid mutator transaction binding the contract method 0x1d3bc57b.
+//
+// Solidity: function backendPurchaseProduct(string _vendor, string _product) returns(bool)
+func (_Vendingmachine *VendingmachineTransactorSession) BackendPurchaseProduct(_vendor string, _product string) (*types.Transaction, error) {
+	return _Vendingmachine.Contract.BackendPurchaseProduct(&_Vendingmachine.TransactOpts, _vendor, _product)
+}
+
+// PurchaseProduct is a paid mutator transaction binding the contract method 0xa0622f4e.
+//
+// Solidity: function purchaseProduct(string _vendor, string _product) returns(bool)
+func (_Vendingmachine *VendingmachineTransactor) PurchaseProduct(opts *bind.TransactOpts, _vendor string, _product string) (*types.Transaction, error) {
+	return _Vendingmachine.contract.Transact(opts, "purchaseProduct", _vendor, _product)
+}
+
+// PurchaseProduct is a paid mutator transaction binding the contract method 0xa0622f4e.
+//
+// Solidity: function purchaseProduct(string _vendor, string _product) returns(bool)
+func (_Vendingmachine *VendingmachineSession) PurchaseProduct(_vendor string, _product string) (*types.Transaction, error) {
+	return _Vendingmachine.Contract.PurchaseProduct(&_Vendingmachine.TransactOpts, _vendor, _product)
+}
+
+// PurchaseProduct is a paid mutator transaction binding the contract method 0xa0622f4e.
+//
+// Solidity: function purchaseProduct(string _vendor, string _product) returns(bool)
+func (_Vendingmachine *VendingmachineTransactorSession) PurchaseProduct(_vendor string, _product string) (*types.Transaction, error) {
+	return _Vendingmachine.Contract.PurchaseProduct(&_Vendingmachine.TransactOpts, _vendor, _product)
+}
+
+// VendingmachineProductPurchasedIterator is returned from FilterProductPurchased and is used to iterate over the raw logs and unpacked data for ProductPurchased events raised by the Vendingmachine contract.
+type VendingmachineProductPurchasedIterator struct {
+	Event *VendingmachineProductPurchased // Event containing the contract specifics and raw log
+
+	contract *bind.BoundContract // Generic contract to use for unpacking event data
+	event    string              // Event name to use for unpacking event data
+
+	logs chan types.Log        // Log channel receiving the found contract events
+	sub  ethereum.Subscription // Subscription for errors, completion and termination
+	done bool                  // Whether the subscription completed delivering logs
+	fail error                 // Occurred error to stop iteration
+}
+
+// Next advances the iterator to the subsequent event, returning whether there
+// are any more events found. In case of a retrieval or parsing error, false is
+// returned and Error() can be queried for the exact failure.
+func (it *VendingmachineProductPurchasedIterator) Next() bool {
+	// If the iterator failed, stop iterating
+	if it.fail != nil {
+		return false
+	}
+	// If the iterator completed, deliver directly whatever's available
+	if it.done {
+		select {
+		case log := <-it.logs:
+			it.Event = new(VendingmachineProductPurchased)
+			if err := it.contract.UnpackLog(it.Event, it.event, log); err != nil {
+				it.fail = err
+				return false
+			}
+			it.Event.Raw = log
+			return true
+
+		default:
+			return false
+		}
+	}
+	// Iterator still in progress, wait for either a data or an error event
+	select {
+	case log := <-it.logs:
+		it.Event = new(VendingmachineProductPurchased)
+		if err := it.contract.UnpackLog(it.Event, it.event, log); err != nil {
+			it.fail = err
+			return false
+		}
