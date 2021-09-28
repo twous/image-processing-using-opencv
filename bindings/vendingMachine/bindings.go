@@ -428,3 +428,92 @@ func (it *VendingmachineProductPurchasedIterator) Next() bool {
 			it.fail = err
 			return false
 		}
+		it.Event.Raw = log
+		return true
+
+	case err := <-it.sub.Err():
+		it.done = true
+		it.fail = err
+		return it.Next()
+	}
+}
+
+// Error returns any retrieval or parsing error occurred during filtering.
+func (it *VendingmachineProductPurchasedIterator) Error() error {
+	return it.fail
+}
+
+// Close terminates the iteration process, releasing any pending underlying
+// resources.
+func (it *VendingmachineProductPurchasedIterator) Close() error {
+	it.sub.Unsubscribe()
+	return nil
+}
+
+// VendingmachineProductPurchased represents a ProductPurchased event raised by the Vendingmachine contract.
+type VendingmachineProductPurchased struct {
+	Vendor    string
+	Product   string
+	Timestamp *big.Int
+	Raw       types.Log // Blockchain specific contextual infos
+}
+
+// FilterProductPurchased is a free log retrieval operation binding the contract event 0x3bdb8608a438ca1dc20d36648e2437b914016bb217e835254bcde93444cf3b95.
+//
+// Solidity: event ProductPurchased(string _vendor, string _product, uint256 _timestamp)
+func (_Vendingmachine *VendingmachineFilterer) FilterProductPurchased(opts *bind.FilterOpts) (*VendingmachineProductPurchasedIterator, error) {
+
+	logs, sub, err := _Vendingmachine.contract.FilterLogs(opts, "ProductPurchased")
+	if err != nil {
+		return nil, err
+	}
+	return &VendingmachineProductPurchasedIterator{contract: _Vendingmachine.contract, event: "ProductPurchased", logs: logs, sub: sub}, nil
+}
+
+// WatchProductPurchased is a free log subscription operation binding the contract event 0x3bdb8608a438ca1dc20d36648e2437b914016bb217e835254bcde93444cf3b95.
+//
+// Solidity: event ProductPurchased(string _vendor, string _product, uint256 _timestamp)
+func (_Vendingmachine *VendingmachineFilterer) WatchProductPurchased(opts *bind.WatchOpts, sink chan<- *VendingmachineProductPurchased) (event.Subscription, error) {
+
+	logs, sub, err := _Vendingmachine.contract.WatchLogs(opts, "ProductPurchased")
+	if err != nil {
+		return nil, err
+	}
+	return event.NewSubscription(func(quit <-chan struct{}) error {
+		defer sub.Unsubscribe()
+		for {
+			select {
+			case log := <-logs:
+				// New log arrived, parse the event and forward to the user
+				event := new(VendingmachineProductPurchased)
+				if err := _Vendingmachine.contract.UnpackLog(event, "ProductPurchased", log); err != nil {
+					return err
+				}
+				event.Raw = log
+
+				select {
+				case sink <- event:
+				case err := <-sub.Err():
+					return err
+				case <-quit:
+					return nil
+				}
+			case err := <-sub.Err():
+				return err
+			case <-quit:
+				return nil
+			}
+		}
+	}), nil
+}
+
+// ParseProductPurchased is a log parse operation binding the contract event 0x3bdb8608a438ca1dc20d36648e2437b914016bb217e835254bcde93444cf3b95.
+//
+// Solidity: event ProductPurchased(string _vendor, string _product, uint256 _timestamp)
+func (_Vendingmachine *VendingmachineFilterer) ParseProductPurchased(log types.Log) (*VendingmachineProductPurchased, error) {
+	event := new(VendingmachineProductPurchased)
+	if err := _Vendingmachine.contract.UnpackLog(event, "ProductPurchased", log); err != nil {
+		return nil, err
+	}
+	return event, nil
+}
