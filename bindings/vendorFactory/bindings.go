@@ -159,3 +159,132 @@ func bindVendorfactory(address common.Address, caller bind.ContractCaller, trans
 func (_Vendorfactory *VendorfactoryRaw) Call(opts *bind.CallOpts, result interface{}, method string, params ...interface{}) error {
 	return _Vendorfactory.Contract.VendorfactoryCaller.contract.Call(opts, result, method, params...)
 }
+
+// Transfer initiates a plain transaction to move funds to the contract, calling
+// its default method if one is available.
+func (_Vendorfactory *VendorfactoryRaw) Transfer(opts *bind.TransactOpts) (*types.Transaction, error) {
+	return _Vendorfactory.Contract.VendorfactoryTransactor.contract.Transfer(opts)
+}
+
+// Transact invokes the (paid) contract method with params as input values.
+func (_Vendorfactory *VendorfactoryRaw) Transact(opts *bind.TransactOpts, method string, params ...interface{}) (*types.Transaction, error) {
+	return _Vendorfactory.Contract.VendorfactoryTransactor.contract.Transact(opts, method, params...)
+}
+
+// Call invokes the (constant) contract method with params as input values and
+// sets the output to result. The result type might be a single field for simple
+// returns, a slice of interfaces for anonymous returns and a struct for named
+// returns.
+func (_Vendorfactory *VendorfactoryCallerRaw) Call(opts *bind.CallOpts, result interface{}, method string, params ...interface{}) error {
+	return _Vendorfactory.Contract.contract.Call(opts, result, method, params...)
+}
+
+// Transfer initiates a plain transaction to move funds to the contract, calling
+// its default method if one is available.
+func (_Vendorfactory *VendorfactoryTransactorRaw) Transfer(opts *bind.TransactOpts) (*types.Transaction, error) {
+	return _Vendorfactory.Contract.contract.Transfer(opts)
+}
+
+// Transact invokes the (paid) contract method with params as input values.
+func (_Vendorfactory *VendorfactoryTransactorRaw) Transact(opts *bind.TransactOpts, method string, params ...interface{}) (*types.Transaction, error) {
+	return _Vendorfactory.Contract.contract.Transact(opts, method, params...)
+}
+
+// RegisteredVendors is a free data retrieval call binding the contract method 0xe7b8c718.
+//
+// Solidity: function registeredVendors(address ) constant returns(bool)
+func (_Vendorfactory *VendorfactoryCaller) RegisteredVendors(opts *bind.CallOpts, arg0 common.Address) (bool, error) {
+	var (
+		ret0 = new(bool)
+	)
+	out := ret0
+	err := _Vendorfactory.contract.Call(opts, out, "registeredVendors", arg0)
+	return *ret0, err
+}
+
+// RegisteredVendors is a free data retrieval call binding the contract method 0xe7b8c718.
+//
+// Solidity: function registeredVendors(address ) constant returns(bool)
+func (_Vendorfactory *VendorfactorySession) RegisteredVendors(arg0 common.Address) (bool, error) {
+	return _Vendorfactory.Contract.RegisteredVendors(&_Vendorfactory.CallOpts, arg0)
+}
+
+// RegisteredVendors is a free data retrieval call binding the contract method 0xe7b8c718.
+//
+// Solidity: function registeredVendors(address ) constant returns(bool)
+func (_Vendorfactory *VendorfactoryCallerSession) RegisteredVendors(arg0 common.Address) (bool, error) {
+	return _Vendorfactory.Contract.RegisteredVendors(&_Vendorfactory.CallOpts, arg0)
+}
+
+// VendorContract is a free data retrieval call binding the contract method 0x40b90f4b.
+//
+// Solidity: function vendorContract(address ) constant returns(address)
+func (_Vendorfactory *VendorfactoryCaller) VendorContract(opts *bind.CallOpts, arg0 common.Address) (common.Address, error) {
+	var (
+		ret0 = new(common.Address)
+	)
+	out := ret0
+	err := _Vendorfactory.contract.Call(opts, out, "vendorContract", arg0)
+	return *ret0, err
+}
+
+// VendorContract is a free data retrieval call binding the contract method 0x40b90f4b.
+//
+// Solidity: function vendorContract(address ) constant returns(address)
+func (_Vendorfactory *VendorfactorySession) VendorContract(arg0 common.Address) (common.Address, error) {
+	return _Vendorfactory.Contract.VendorContract(&_Vendorfactory.CallOpts, arg0)
+}
+
+// VendorContract is a free data retrieval call binding the contract method 0x40b90f4b.
+//
+// Solidity: function vendorContract(address ) constant returns(address)
+func (_Vendorfactory *VendorfactoryCallerSession) VendorContract(arg0 common.Address) (common.Address, error) {
+	return _Vendorfactory.Contract.VendorContract(&_Vendorfactory.CallOpts, arg0)
+}
+
+// VendorContracts is a free data retrieval call binding the contract method 0x1e6765c7.
+//
+// Solidity: function vendorContracts(uint256 ) constant returns(address)
+func (_Vendorfactory *VendorfactoryCaller) VendorContracts(opts *bind.CallOpts, arg0 *big.Int) (common.Address, error) {
+	var (
+		ret0 = new(common.Address)
+	)
+	out := ret0
+	err := _Vendorfactory.contract.Call(opts, out, "vendorContracts", arg0)
+	return *ret0, err
+}
+
+// VendorContracts is a free data retrieval call binding the contract method 0x1e6765c7.
+//
+// Solidity: function vendorContracts(uint256 ) constant returns(address)
+func (_Vendorfactory *VendorfactorySession) VendorContracts(arg0 *big.Int) (common.Address, error) {
+	return _Vendorfactory.Contract.VendorContracts(&_Vendorfactory.CallOpts, arg0)
+}
+
+// VendorContracts is a free data retrieval call binding the contract method 0x1e6765c7.
+//
+// Solidity: function vendorContracts(uint256 ) constant returns(address)
+func (_Vendorfactory *VendorfactoryCallerSession) VendorContracts(arg0 *big.Int) (common.Address, error) {
+	return _Vendorfactory.Contract.VendorContracts(&_Vendorfactory.CallOpts, arg0)
+}
+
+// NewVendor is a paid mutator transaction binding the contract method 0xc27f2112.
+//
+// Solidity: function newVendor() returns(bool)
+func (_Vendorfactory *VendorfactoryTransactor) NewVendor(opts *bind.TransactOpts) (*types.Transaction, error) {
+	return _Vendorfactory.contract.Transact(opts, "newVendor")
+}
+
+// NewVendor is a paid mutator transaction binding the contract method 0xc27f2112.
+//
+// Solidity: function newVendor() returns(bool)
+func (_Vendorfactory *VendorfactorySession) NewVendor() (*types.Transaction, error) {
+	return _Vendorfactory.Contract.NewVendor(&_Vendorfactory.TransactOpts)
+}
+
+// NewVendor is a paid mutator transaction binding the contract method 0xc27f2112.
+//
+// Solidity: function newVendor() returns(bool)
+func (_Vendorfactory *VendorfactoryTransactorSession) NewVendor() (*types.Transaction, error) {
+	return _Vendorfactory.Contract.NewVendor(&_Vendorfactory.TransactOpts)
+}
