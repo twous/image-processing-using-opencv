@@ -28,4 +28,4 @@ var (
 )
 
 // VendormanagementABI is the input ABI used to generate the binding from.
-const VendormanagementABI = 
+const VendormanagementABI = "[{\"constant\":true,\"inputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"name\":\"products\",\"outpu
