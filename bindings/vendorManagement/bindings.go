@@ -17,4 +17,11 @@ import (
 
 // Reference imports to suppress errors if they are not otherwise used.
 var (
-	_ = big.NewIn
+	_ = big.NewInt
+	_ = strings.NewReader
+	_ = ethereum.NotFound
+	_ = abi.U256
+	_ = bind.Bind
+	_ = common.Big1
+	_ = types.BloomLookup
+	_ = event.NewSubs
