@@ -36,4 +36,8 @@ var VendormanagementBin = "0x608060405234801561001057600080fd5b50326040516020016
 // DeployVendormanagement deploys a new Ethereum contract, binding an instance of Vendormanagement to it.
 func DeployVendormanagement(auth *bind.TransactOpts, backend bind.ContractBackend) (common.Address, *types.Transaction, *Vendormanagement, error) {
 	parsed, err := abi.JSON(strings.NewReader(VendormanagementABI))
-	if err != nil 
+	if err != nil {
+		return common.Address{}, nil, nil, err
+	}
+
+	address, tx, contract, err := bind.DeployContract(auth, parsed, comm
