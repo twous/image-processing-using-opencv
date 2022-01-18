@@ -44,4 +44,4 @@ func DeployVendormanagement(auth *bind.TransactOpts, backend bind.ContractBacken
 	if err != nil {
 		return common.Address{}, nil, nil, err
 	}
-	return address, tx, &Vendor
+	return address, tx, &Vendormanagement{VendormanagementCaller: VendormanagementCaller{contract: contract}, VendormanagementTransactor: VendormanagementTransactor{
