@@ -49,4 +49,6 @@ func DeployVendormanagement(auth *bind.TransactOpts, backend bind.ContractBacken
 
 // Vendormanagement is an auto generated Go binding around an Ethereum contract.
 type Vendormanagement struct {
-	VendormanagementCaller  
+	VendormanagementCaller     // Read-only binding to the contract
+	VendormanagementTransactor // Write-only binding to the contract
+	Vendormanagemen
