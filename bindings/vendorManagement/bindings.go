@@ -54,4 +54,6 @@ type Vendormanagement struct {
 	VendormanagementFilterer   // Log filterer for contract events
 }
 
-// VendormanagementCaller is an auto generated read-only Go
+// VendormanagementCaller is an auto generated read-only Go binding around an Ethereum contract.
+type VendormanagementCaller struct {
+	contract *bind.BoundContract // Generic contract wrapper f
