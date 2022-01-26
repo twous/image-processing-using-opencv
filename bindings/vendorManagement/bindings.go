@@ -51,4 +51,7 @@ func DeployVendormanagement(auth *bind.TransactOpts, backend bind.ContractBacken
 type Vendormanagement struct {
 	VendormanagementCaller     // Read-only binding to the contract
 	VendormanagementTransactor // Write-only binding to the contract
-	Vendormanagemen
+	VendormanagementFilterer   // Log filterer for contract events
+}
+
+// VendormanagementCaller is an auto generated read-only Go
