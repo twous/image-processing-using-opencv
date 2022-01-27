@@ -56,4 +56,8 @@ type Vendormanagement struct {
 
 // VendormanagementCaller is an auto generated read-only Go binding around an Ethereum contract.
 type VendormanagementCaller struct {
-	contract *bind.BoundContract // Generic contract wrapper f
+	contract *bind.BoundContract // Generic contract wrapper for the low level calls
+}
+
+// VendormanagementTransactor is an auto generated write-only Go binding around an Ethereum contract.
+typ
