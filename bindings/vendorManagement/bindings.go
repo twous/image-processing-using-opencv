@@ -71,4 +71,6 @@ type VendormanagementFilterer struct {
 
 // VendormanagementSession is an auto generated Go binding around an Ethereum contract,
 // with pre-set call and transact options.
-type VendormanagementSession stru
+type VendormanagementSession struct {
+	Contract     *Vendormanagement // Generic contract binding to set the session for
+	CallOpts     bind.CallOpts     // Call options to use through
