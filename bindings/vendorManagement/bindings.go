@@ -69,4 +69,6 @@ type VendormanagementFilterer struct {
 	contract *bind.BoundContract // Generic contract wrapper for the low level calls
 }
 
-// VendormanagementSession is an auto generated 
+// VendormanagementSession is an auto generated Go binding around an Ethereum contract,
+// with pre-set call and transact options.
+type VendormanagementSession stru
