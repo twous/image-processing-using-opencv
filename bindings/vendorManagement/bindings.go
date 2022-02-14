@@ -77,4 +77,6 @@ type VendormanagementSession struct {
 	TransactOpts bind.TransactOpts // Transaction auth options to use throughout this session
 }
 
-// VendormanagementCallerS
+// VendormanagementCallerSession is an auto generated read-only Go binding around an Ethereum contract,
+// with pre-set call options.
+type Vendormanagemen
