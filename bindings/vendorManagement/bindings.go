@@ -73,4 +73,8 @@ type VendormanagementFilterer struct {
 // with pre-set call and transact options.
 type VendormanagementSession struct {
 	Contract     *Vendormanagement // Generic contract binding to set the session for
-	CallOpts     bind.CallOpts     // Call options to use through
+	CallOpts     bind.CallOpts     // Call options to use throughout this session
+	TransactOpts bind.TransactOpts // Transaction auth options to use throughout this session
+}
+
+// VendormanagementCallerS
