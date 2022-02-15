@@ -84,4 +84,6 @@ type VendormanagementCallerSession struct {
 	CallOpts bind.CallOpts           // Call options to use throughout this session
 }
 
-// VendormanagementTransactorSession is an auto generated write-only 
+// VendormanagementTransactorSession is an auto generated write-only Go binding around an Ethereum contract,
+// with pre-set transact options.
+type VendormanagementTransactorSession struc
