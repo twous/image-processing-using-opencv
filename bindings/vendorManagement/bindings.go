@@ -81,4 +81,7 @@ type VendormanagementSession struct {
 // with pre-set call options.
 type VendormanagementCallerSession struct {
 	Contract *VendormanagementCaller // Generic contract caller binding to set the session for
-	CallOp
+	CallOpts bind.CallOpts           // Call options to use throughout this session
+}
+
+// VendormanagementTransactorSession is an auto generated write-only 
