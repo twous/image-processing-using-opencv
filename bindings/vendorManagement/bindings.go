@@ -86,4 +86,6 @@ type VendormanagementCallerSession struct {
 
 // VendormanagementTransactorSession is an auto generated write-only Go binding around an Ethereum contract,
 // with pre-set transact options.
-type VendormanagementTransactorSession struc
+type VendormanagementTransactorSession struct {
+	Contract     *VendormanagementTransactor // Generic contract transactor binding to set the session for
+	TransactOpts 
