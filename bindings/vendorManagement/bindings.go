@@ -88,4 +88,7 @@ type VendormanagementCallerSession struct {
 // with pre-set transact options.
 type VendormanagementTransactorSession struct {
 	Contract     *VendormanagementTransactor // Generic contract transactor binding to set the session for
-	TransactOpts 
+	TransactOpts bind.TransactOpts           // Transaction auth options to use throughout this session
+}
+
+// VendormanagementRaw is an auto generat
