@@ -91,4 +91,6 @@ type VendormanagementTransactorSession struct {
 	TransactOpts bind.TransactOpts           // Transaction auth options to use throughout this session
 }
 
-// VendormanagementRaw is an auto generat
+// VendormanagementRaw is an auto generated low-level Go binding around an Ethereum contract.
+type VendormanagementRaw struct {
+	Contract *Vendormanagement // Generic 
