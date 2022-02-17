@@ -93,4 +93,7 @@ type VendormanagementTransactorSession struct {
 
 // VendormanagementRaw is an auto generated low-level Go binding around an Ethereum contract.
 type VendormanagementRaw struct {
-	Contract *Vendormanagement // Generic 
+	Contract *Vendormanagement // Generic contract binding to access the raw methods on
+}
+
+// VendormanagementCallerRaw is an auto generated low-level read-only Go binding aro
