@@ -96,4 +96,6 @@ type VendormanagementRaw struct {
 	Contract *Vendormanagement // Generic contract binding to access the raw methods on
 }
 
-// VendormanagementCallerRaw is an auto generated low-level read-only Go binding aro
+// VendormanagementCallerRaw is an auto generated low-level read-only Go binding around an Ethereum contract.
+type VendormanagementCallerRaw struct {
+	Contract *VendormanagementCaller // Generic read-only contract binding to access 
