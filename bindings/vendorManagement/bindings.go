@@ -103,4 +103,7 @@ type VendormanagementCallerRaw struct {
 
 // VendormanagementTransactorRaw is an auto generated low-level write-only Go binding around an Ethereum contract.
 type VendormanagementTransactorRaw struct {
-	Contract *VendormanagementTransactor // Generic write-only contrac
+	Contract *VendormanagementTransactor // Generic write-only contract binding to access the raw methods on
+}
+
+// NewVendormanagement creates a new instance of Vendormanagement, bound to a specific d
