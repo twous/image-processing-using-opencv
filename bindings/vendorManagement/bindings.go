@@ -108,4 +108,8 @@ type VendormanagementTransactorRaw struct {
 
 // NewVendormanagement creates a new instance of Vendormanagement, bound to a specific deployed contract.
 func NewVendormanagement(address common.Address, backend bind.ContractBackend) (*Vendormanagement, error) {
-	co
+	contract, err := bindVendormanagement(address, backend, backend, backend)
+	if err != nil {
+		return nil, err
+	}
+	ret
