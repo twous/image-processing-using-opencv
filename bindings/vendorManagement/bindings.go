@@ -112,4 +112,4 @@ func NewVendormanagement(address common.Address, backend bind.ContractBackend) (
 	if err != nil {
 		return nil, err
 	}
-	ret
+	return &Vendormanagement{VendormanagementCaller: VendormanagementCaller{contract: contract}, VendormanagementTransactor: VendormanagementTransactor{contr
