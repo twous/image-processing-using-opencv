@@ -106,4 +106,6 @@ type VendormanagementTransactorRaw struct {
 	Contract *VendormanagementTransactor // Generic write-only contract binding to access the raw methods on
 }
 
-// NewVendormanagement creates a new instance of Vendormanagement, bound to a specific d
+// NewVendormanagement creates a new instance of Vendormanagement, bound to a specific deployed contract.
+func NewVendormanagement(address common.Address, backend bind.ContractBackend) (*Vendormanagement, error) {
+	co
