@@ -115,4 +115,5 @@ func NewVendormanagement(address common.Address, backend bind.ContractBackend) (
 	return &Vendormanagement{VendormanagementCaller: VendormanagementCaller{contract: contract}, VendormanagementTransactor: VendormanagementTransactor{contract: contract}, VendormanagementFilterer: VendormanagementFilterer{contract: contract}}, nil
 }
 
-// NewVendormanagementCalle
+// NewVendormanagementCaller creates a new read-only instance of Vendormanagement, bound to a specific deployed contract.
+func NewVendormanagementCaller(address common.Address, caller bind.
