@@ -119,4 +119,9 @@ func NewVendormanagement(address common.Address, backend bind.ContractBackend) (
 func NewVendormanagementCaller(address common.Address, caller bind.ContractCaller) (*VendormanagementCaller, error) {
 	contract, err := bindVendormanagement(address, caller, nil, nil)
 	if err != nil {
-	
+		return nil, err
+	}
+	return &VendormanagementCaller{contract: contract}, nil
+}
+
+// NewVendormanagementTransactor creates a
