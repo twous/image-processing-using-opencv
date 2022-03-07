@@ -116,4 +116,7 @@ func NewVendormanagement(address common.Address, backend bind.ContractBackend) (
 }
 
 // NewVendormanagementCaller creates a new read-only instance of Vendormanagement, bound to a specific deployed contract.
-func NewVendormanagementCaller(address common.Address, caller bind.
+func NewVendormanagementCaller(address common.Address, caller bind.ContractCaller) (*VendormanagementCaller, error) {
+	contract, err := bindVendormanagement(address, caller, nil, nil)
+	if err != nil {
+	
