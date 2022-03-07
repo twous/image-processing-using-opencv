@@ -124,4 +124,5 @@ func NewVendormanagementCaller(address common.Address, caller bind.ContractCalle
 	return &VendormanagementCaller{contract: contract}, nil
 }
 
-// NewVendormanagementTransactor creates a
+// NewVendormanagementTransactor creates a new write-only instance of Vendormanagement, bound to a specific deployed contract.
+func NewVendormanagementTransactor(address
