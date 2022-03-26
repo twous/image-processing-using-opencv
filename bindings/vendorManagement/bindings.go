@@ -130,4 +130,7 @@ func NewVendormanagementTransactor(address common.Address, transactor bind.Contr
 	if err != nil {
 		return nil, err
 	}
-	return &VendormanagementTransactor{contrac
+	return &VendormanagementTransactor{contract: contract}, nil
+}
+
+// NewVendormanagementFilterer creates a new log filterer instance of Vendormanagement, bound to a specific
