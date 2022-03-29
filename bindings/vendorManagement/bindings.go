@@ -134,4 +134,9 @@ func NewVendormanagementTransactor(address common.Address, transactor bind.Contr
 }
 
 // NewVendormanagementFilterer creates a new log filterer instance of Vendormanagement, bound to a specific deployed contract.
-func NewVendormanagementFilterer(address common.Address, filterer bind.ContractFilterer) (*VendormanagementFilt
+func NewVendormanagementFilterer(address common.Address, filterer bind.ContractFilterer) (*VendormanagementFilterer, error) {
+	contract, err := bindVendormanagement(address, nil, nil, filterer)
+	if err != nil {
+		return nil, err
+	}
+	retu
