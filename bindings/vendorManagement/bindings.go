@@ -143,4 +143,4 @@ func NewVendormanagementFilterer(address common.Address, filterer bind.ContractF
 }
 
 // bindVendormanagement binds a generic wrapper to an already deployed contract.
-func bind
+func bindVendormanagement(address common.Address, caller bind.ContractCaller, transactor bind.ContractTransactor, filterer bind.Contract
