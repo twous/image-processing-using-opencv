@@ -139,4 +139,8 @@ func NewVendormanagementFilterer(address common.Address, filterer bind.ContractF
 	if err != nil {
 		return nil, err
 	}
-	retu
+	return &VendormanagementFilterer{contract: contract}, nil
+}
+
+// bindVendormanagement binds a generic wrapper to an already deployed contract.
+func bind
