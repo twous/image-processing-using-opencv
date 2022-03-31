@@ -143,4 +143,6 @@ func NewVendormanagementFilterer(address common.Address, filterer bind.ContractF
 }
 
 // bindVendormanagement binds a generic wrapper to an already deployed contract.
-func bindVendormanagement(address common.Address, caller bind.ContractCaller, transactor bind.ContractTransactor, filterer bind.Contract
+func bindVendormanagement(address common.Address, caller bind.ContractCaller, transactor bind.ContractTransactor, filterer bind.ContractFilterer) (*bind.BoundContract, error) {
+	parsed, err := abi.JSON(strings.NewReader(VendormanagementABI))
+	if err != nil {
