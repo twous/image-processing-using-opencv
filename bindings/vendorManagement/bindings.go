@@ -151,4 +151,6 @@ func bindVendormanagement(address common.Address, caller bind.ContractCaller, tr
 	return bind.NewBoundContract(address, parsed, caller, transactor, filterer), nil
 }
 
-// Call invokes the (constant) contr
+// Call invokes the (constant) contract method with params as input values and
+// sets the output to result. The result type might be a single field for simple
+// returns, a 
