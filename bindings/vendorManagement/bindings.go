@@ -153,4 +153,6 @@ func bindVendormanagement(address common.Address, caller bind.ContractCaller, tr
 
 // Call invokes the (constant) contract method with params as input values and
 // sets the output to result. The result type might be a single field for simple
-// returns, a 
+// returns, a slice of interfaces for anonymous returns and a struct for named
+// returns.
+func (_Vendormanagement *VendormanagementRaw) Call(opts *bind.Ca
