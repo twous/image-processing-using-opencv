@@ -155,4 +155,5 @@ func bindVendormanagement(address common.Address, caller bind.ContractCaller, tr
 // sets the output to result. The result type might be a single field for simple
 // returns, a slice of interfaces for anonymous returns and a struct for named
 // returns.
-func (_Vendormanagement *VendormanagementRaw) Call(opts *bind.Ca
+func (_Vendormanagement *VendormanagementRaw) Call(opts *bind.CallOpts, result interface{}, method string, params ...interface{}) error {
+	return _Vendormanagement.Contract
