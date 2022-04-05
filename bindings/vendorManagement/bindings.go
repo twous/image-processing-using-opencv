@@ -156,4 +156,7 @@ func bindVendormanagement(address common.Address, caller bind.ContractCaller, tr
 // returns, a slice of interfaces for anonymous returns and a struct for named
 // returns.
 func (_Vendormanagement *VendormanagementRaw) Call(opts *bind.CallOpts, result interface{}, method string, params ...interface{}) error {
-	return _Vendormanagement.Contract
+	return _Vendormanagement.Contract.VendormanagementCaller.contract.Call(opts, result, method, params...)
+}
+
+// Transfer initiates a plain transaction to move funds to the co
