@@ -165,4 +165,5 @@ func (_Vendormanagement *VendormanagementRaw) Transfer(opts *bind.TransactOpts) 
 	return _Vendormanagement.Contract.VendormanagementTransactor.contract.Transfer(opts)
 }
 
-// Transact
+// Transact invokes the (paid) contract method with params as input values.
+func (_Vendormanagement *VendormanagementRaw) Transact(opts *bind.
