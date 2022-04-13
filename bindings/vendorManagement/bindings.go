@@ -175,4 +175,7 @@ func (_Vendormanagement *VendormanagementRaw) Transact(opts *bind.TransactOpts, 
 // returns, a slice of interfaces for anonymous returns and a struct for named
 // returns.
 func (_Vendormanagement *VendormanagementCallerRaw) Call(opts *bind.CallOpts, result interface{}, method string, params ...interface{}) error {
-	return _Vendormanagem
+	return _Vendormanagement.Contract.contract.Call(opts, result, method, params...)
+}
+
+// Transfer initiates a plain transaction to move funds to the contract
