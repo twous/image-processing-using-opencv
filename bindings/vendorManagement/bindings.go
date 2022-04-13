@@ -170,4 +170,5 @@ func (_Vendormanagement *VendormanagementRaw) Transact(opts *bind.TransactOpts, 
 	return _Vendormanagement.Contract.VendormanagementTransactor.contract.Transact(opts, method, params...)
 }
 
-// Call invokes the (constant) contract method with para
+// Call invokes the (constant) contract method with params as input values and
+// sets the output to result. The result type might be a single field for simple
