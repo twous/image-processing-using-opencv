@@ -180,4 +180,8 @@ func (_Vendormanagement *VendormanagementCallerRaw) Call(opts *bind.CallOpts, re
 
 // Transfer initiates a plain transaction to move funds to the contract, calling
 // its default method if one is available.
-func (_Vendormanagement *VendormanagementTransactorRaw) Transfer(opts *bind.
+func (_Vendormanagement *VendormanagementTransactorRaw) Transfer(opts *bind.TransactOpts) (*types.Transaction, error) {
+	return _Vendormanagement.Contract.contract.Transfer(opts)
+}
+
+// Transact invok
