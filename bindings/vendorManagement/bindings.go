@@ -189,4 +189,7 @@ func (_Vendormanagement *VendormanagementTransactorRaw) Transact(opts *bind.Tran
 	return _Vendormanagement.Contract.contract.Transact(opts, method, params...)
 }
 
-// Id is a free data retrieval call binding 
+// Id is a free data retrieval call binding the contract method 0xaf640d0f.
+//
+// Solidity: function id() constant returns(bytes32)
+func (_Vendormanagement *VendormanagementCaller)
