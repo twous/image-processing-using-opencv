@@ -219,3 +219,11 @@ func (_Vendormanagement *VendormanagementCallerSession) Id() ([32]byte, error) {
 //
 // Solidity: function owner() constant returns(address)
 func (_Vendormanagement *VendormanagementCaller) Owner(opts *bind.CallOpts) (common.Address, error) {
+	var (
+		ret0 = new(common.Address)
+	)
+	out := ret0
+	err := _Vendormanagement.contract.Call(opts, out, "owner")
+	return *ret0, err
+}
+
