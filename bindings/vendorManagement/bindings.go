@@ -213,3 +213,8 @@ func (_Vendormanagement *VendormanagementSession) Id() ([32]byte, error) {
 // Solidity: function id() constant returns(bytes32)
 func (_Vendormanagement *VendormanagementCallerSession) Id() ([32]byte, error) {
 	return _Vendormanagement.Contract.Id(&_Vendormanagement.CallOpts)
+}
+
+// Owner is a free data retrieval call binding the contract method 0x8da5cb5b.
+//
+// Solidity: function owner() 
