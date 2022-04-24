@@ -211,4 +211,5 @@ func (_Vendormanagement *VendormanagementSession) Id() ([32]byte, error) {
 // Id is a free data retrieval call binding the contract method 0xaf640d0f.
 //
 // Solidity: function id() constant returns(bytes32)
-func (_Ven
+func (_Vendormanagement *VendormanagementCallerSession) Id() ([32]byte, error) {
+	return _Vendormanagement.Contract.Id(&_Vendormanagement.CallOpts)
