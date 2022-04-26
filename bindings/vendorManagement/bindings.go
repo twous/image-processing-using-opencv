@@ -227,3 +227,6 @@ func (_Vendormanagement *VendormanagementCaller) Owner(opts *bind.CallOpts) (com
 	return *ret0, err
 }
 
+// Owner is a free data retrieval call binding the contract method 0x8da5cb5b.
+//
+// Solidity: function owner() cons
