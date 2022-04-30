@@ -243,4 +243,6 @@ func (_Vendormanagement *VendormanagementCallerSession) Owner() (common.Address,
 
 // Products is a free data retrieval call binding the contract method 0x0186a423.
 //
-// Solidity: function products(string ) constant returns(string name, uint256 cost
+// Solidity: function products(string ) constant returns(string name, uint256 cost)
+func (_Vendormanagement *VendormanagementCaller) Products(opts *bind.CallOpts, arg0 string) (struct {
+	Na
