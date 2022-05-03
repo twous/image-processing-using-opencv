@@ -253,4 +253,8 @@ func (_Vendormanagement *VendormanagementCaller) Products(opts *bind.CallOpts, a
 		Cost *big.Int
 	})
 	out := ret
-	err := _Vendormanagement
+	err := _Vendormanagement.contract.Call(opts, out, "products", arg0)
+	return *ret, err
+}
+
+// Products is a free data retrieval call bin
