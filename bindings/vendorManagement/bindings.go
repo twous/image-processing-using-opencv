@@ -245,4 +245,12 @@ func (_Vendormanagement *VendormanagementCallerSession) Owner() (common.Address,
 //
 // Solidity: function products(string ) constant returns(string name, uint256 cost)
 func (_Vendormanagement *VendormanagementCaller) Products(opts *bind.CallOpts, arg0 string) (struct {
-	Na
+	Name string
+	Cost *big.Int
+}, error) {
+	ret := new(struct {
+		Name string
+		Cost *big.Int
+	})
+	out := ret
+	err := _Vendormanagement
