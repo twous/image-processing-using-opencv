@@ -263,4 +263,8 @@ func (_Vendormanagement *VendormanagementCaller) Products(opts *bind.CallOpts, a
 func (_Vendormanagement *VendormanagementSession) Products(arg0 string) (struct {
 	Name string
 	Cost *big.Int
-}, error) 
+}, error) {
+	return _Vendormanagement.Contract.Products(&_Vendormanagement.CallOpts, arg0)
+}
+
+// Products is a free data retrieval call bindi
