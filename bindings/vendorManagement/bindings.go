@@ -273,4 +273,8 @@ func (_Vendormanagement *VendormanagementSession) Products(arg0 string) (struct 
 func (_Vendormanagement *VendormanagementCallerSession) Products(arg0 string) (struct {
 	Name string
 	Cost *big.Int
-},
+}, error) {
+	return _Vendormanagement.Contract.Products(&_Vendormanagement.CallOpts, arg0)
+}
+
+// SoldAt is a free data retrieval
