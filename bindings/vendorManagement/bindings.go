@@ -269,4 +269,8 @@ func (_Vendormanagement *VendormanagementSession) Products(arg0 string) (struct 
 
 // Products is a free data retrieval call binding the contract method 0x0186a423.
 //
-// Solidity: function products(string ) constant returns(string name, uint256 cost
+// Solidity: function products(string ) constant returns(string name, uint256 cost)
+func (_Vendormanagement *VendormanagementCallerSession) Products(arg0 string) (struct {
+	Name string
+	Cost *big.Int
+},
