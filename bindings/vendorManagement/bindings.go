@@ -282,4 +282,11 @@ func (_Vendormanagement *VendormanagementCallerSession) Products(arg0 string) (s
 // Solidity: function soldAt(string , string ) constant returns(bool)
 func (_Vendormanagement *VendormanagementCaller) SoldAt(opts *bind.CallOpts, arg0 string, arg1 string) (bool, error) {
 	var (
-		re
+		ret0 = new(bool)
+	)
+	out := ret0
+	err := _Vendormanagement.contract.Call(opts, out, "soldAt", arg0, arg1)
+	return *ret0, err
+}
+
+// SoldAt is a fre
