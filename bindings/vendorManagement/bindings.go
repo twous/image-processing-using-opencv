@@ -293,4 +293,9 @@ func (_Vendormanagement *VendormanagementCaller) SoldAt(opts *bind.CallOpts, arg
 //
 // Solidity: function soldAt(string , string ) constant returns(bool)
 func (_Vendormanagement *VendormanagementSession) SoldAt(arg0 string, arg1 string) (bool, error) {
-	return _Vendormanagement.Contract.SoldAt(&_Vendorma
+	return _Vendormanagement.Contract.SoldAt(&_Vendormanagement.CallOpts, arg0, arg1)
+}
+
+// SoldAt is a free data retrieval call binding the contract method 0x338a6d10.
+//
+// Solidity: function soldA
