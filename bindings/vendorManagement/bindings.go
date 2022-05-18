@@ -289,4 +289,7 @@ func (_Vendormanagement *VendormanagementCaller) SoldAt(opts *bind.CallOpts, arg
 	return *ret0, err
 }
 
-// SoldAt is a fre
+// SoldAt is a free data retrieval call binding the contract method 0x338a6d10.
+//
+// Solidity: function soldAt(string , string ) constant returns(bool)
+func (_
