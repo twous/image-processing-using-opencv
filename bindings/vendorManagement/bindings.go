@@ -306,4 +306,7 @@ func (_Vendormanagement *VendormanagementCallerSession) SoldAt(arg0 string, arg1
 // WithdrawLock is a free data retrieval call binding the contract method 0x5c388ca6.
 //
 // Solidity: function withdrawLock() constant returns(bool)
-fu
+func (_Vendormanagement *VendormanagementCaller) WithdrawLock(opts *bind.CallOpts) (bool, error) {
+	var (
+		ret0 = new(bool)
+	)
