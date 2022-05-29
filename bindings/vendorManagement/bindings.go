@@ -310,3 +310,9 @@ func (_Vendormanagement *VendormanagementCaller) WithdrawLock(opts *bind.CallOpt
 	var (
 		ret0 = new(bool)
 	)
+	out := ret0
+	err := _Vendormanagement.contract.Call(opts, out, "withdrawLock")
+	return *ret0, err
+}
+
+// WithdrawLock is a free data
