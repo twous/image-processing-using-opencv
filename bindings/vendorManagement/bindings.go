@@ -322,4 +322,7 @@ func (_Vendormanagement *VendormanagementSession) WithdrawLock() (bool, error) {
 	return _Vendormanagement.Contract.WithdrawLock(&_Vendormanagement.CallOpts)
 }
 
-// WithdrawLock is a free data retrieval call binding the contrac
+// WithdrawLock is a free data retrieval call binding the contract method 0x5c388ca6.
+//
+// Solidity: function withdrawLock() constant returns(bool)
+func (_Vendormanagement *VendormanagementCallerSes
