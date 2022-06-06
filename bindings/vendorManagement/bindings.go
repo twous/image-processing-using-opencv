@@ -319,4 +319,7 @@ func (_Vendormanagement *VendormanagementCaller) WithdrawLock(opts *bind.CallOpt
 //
 // Solidity: function withdrawLock() constant returns(bool)
 func (_Vendormanagement *VendormanagementSession) WithdrawLock() (bool, error) {
-	return _Vendormanagement.Contra
+	return _Vendormanagement.Contract.WithdrawLock(&_Vendormanagement.CallOpts)
+}
+
+// WithdrawLock is a free data retrieval call binding the contrac
