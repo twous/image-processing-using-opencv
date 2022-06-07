@@ -329,3 +329,6 @@ func (_Vendormanagement *VendormanagementCallerSession) WithdrawLock() (bool, er
 	return _Vendormanagement.Contract.WithdrawLock(&_Vendormanagement.CallOpts)
 }
 
+// AddProductLocation is a paid mutator transaction binding the contract method 0x6c8e745c.
+//
+// Solidity: function addProductLocation(
