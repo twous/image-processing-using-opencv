@@ -333,4 +333,7 @@ func (_Vendormanagement *VendormanagementCallerSession) WithdrawLock() (bool, er
 //
 // Solidity: function addProductLocation(string _name, string _location) returns(bool)
 func (_Vendormanagement *VendormanagementTransactor) AddProductLocation(opts *bind.TransactOpts, _name string, _location string) (*types.Transaction, error) {
-	return _Vendormanagement.contract.Transact(opts
+	return _Vendormanagement.contract.Transact(opts, "addProductLocation", _name, _location)
+}
+
+// AddProductLocation is a paid mutator transaction binding the con
