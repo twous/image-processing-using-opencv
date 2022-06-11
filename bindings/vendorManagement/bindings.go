@@ -339,4 +339,5 @@ func (_Vendormanagement *VendormanagementTransactor) AddProductLocation(opts *bi
 // AddProductLocation is a paid mutator transaction binding the contract method 0x6c8e745c.
 //
 // Solidity: function addProductLocation(string _name, string _location) returns(bool)
-f
+func (_Vendormanagement *VendormanagementSession) AddProductLocation(_name string, _location string) (*types.Transaction, error) {
+	return _V
