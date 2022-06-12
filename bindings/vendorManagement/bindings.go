@@ -340,4 +340,7 @@ func (_Vendormanagement *VendormanagementTransactor) AddProductLocation(opts *bi
 //
 // Solidity: function addProductLocation(string _name, string _location) returns(bool)
 func (_Vendormanagement *VendormanagementSession) AddProductLocation(_name string, _location string) (*types.Transaction, error) {
-	return _V
+	return _Vendormanagement.Contract.AddProductLocation(&_Vendormanagement.TransactOpts, _name, _location)
+}
+
+// AddProductLocation is a paid mut
