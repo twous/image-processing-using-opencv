@@ -360,4 +360,5 @@ func (_Vendormanagement *VendormanagementTransactor) RegisterProduct(opts *bind.
 // RegisterProduct is a paid mutator transaction binding the contract method 0xc43df6aa.
 //
 // Solidity: function registerProduct(string _name, string[] _locations, uint256 _cost) returns(bool)
-func (_Vendormanagement *VendormanagementSession) RegisterProduct(
+func (_Vendormanagement *VendormanagementSession) RegisterProduct(_name string, _locations []string, _cost *big.Int) (*types.Transaction, error) {
+	return _Vendormanagement.Contract.
