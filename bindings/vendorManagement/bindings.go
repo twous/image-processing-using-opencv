@@ -375,4 +375,7 @@ func (_Vendormanagement *VendormanagementTransactorSession) RegisterProduct(_nam
 //
 // Solidity: function removeProductLocation(string _name, string _location) returns(bool)
 func (_Vendormanagement *VendormanagementTransactor) RemoveProductLocation(opts *bind.TransactOpts, _name string, _location string) (*types.Transaction, error) {
-	return _Vendormanagement.con
+	return _Vendormanagement.contract.Transact(opts, "removeProductLocation", _name, _location)
+}
+
+// RemoveProductLocation is a paid mutator transaction bindin
