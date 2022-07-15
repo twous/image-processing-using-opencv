@@ -381,4 +381,8 @@ func (_Vendormanagement *VendormanagementTransactor) RemoveProductLocation(opts 
 // RemoveProductLocation is a paid mutator transaction binding the contract method 0x5d85ed13.
 //
 // Solidity: function removeProductLocation(string _name, string _location) returns(bool)
-func (_Vendormanagement *VendormanagementSession) RemoveProductLocation(_name string, _location string) (*types.Transaction, error)
+func (_Vendormanagement *VendormanagementSession) RemoveProductLocation(_name string, _location string) (*types.Transaction, error) {
+	return _Vendormanagement.Contract.RemoveProductLocation(&_Vendormanagement.TransactOpts, _name, _location)
+}
+
+// RemoveProdu
