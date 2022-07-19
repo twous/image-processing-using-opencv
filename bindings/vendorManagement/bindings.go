@@ -396,4 +396,9 @@ func (_Vendormanagement *VendormanagementTransactorSession) RemoveProductLocatio
 //
 // Solidity: function withdrawFunds() returns(bool)
 func (_Vendormanagement *VendormanagementTransactor) WithdrawFunds(opts *bind.TransactOpts) (*types.Transaction, error) {
-	return _Vendormanagement.contract.Transact(opts, "withdrawF
+	return _Vendormanagement.contract.Transact(opts, "withdrawFunds")
+}
+
+// WithdrawFunds is a paid mutator transaction binding the contract method 0x24600fc3.
+//
+// Solidity: function withdrawF
