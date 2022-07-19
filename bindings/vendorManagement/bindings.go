@@ -394,3 +394,5 @@ func (_Vendormanagement *VendormanagementTransactorSession) RemoveProductLocatio
 
 // WithdrawFunds is a paid mutator transaction binding the contract method 0x24600fc3.
 //
+// Solidity: function withdrawFunds() returns(bool)
+func (_Vendormanagement *VendormanagementTransactor) WithdrawFunds(o
