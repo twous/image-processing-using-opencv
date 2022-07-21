@@ -403,4 +403,7 @@ func (_Vendormanagement *VendormanagementTransactor) WithdrawFunds(opts *bind.Tr
 //
 // Solidity: function withdrawFunds() returns(bool)
 func (_Vendormanagement *VendormanagementSession) WithdrawFunds() (*types.Transaction, error) {
-	
+	return _Vendormanagement.Contract.WithdrawFunds(&_Vendormanagement.TransactOpts)
+}
+
+// WithdrawFunds is a paid mutator transaction b
