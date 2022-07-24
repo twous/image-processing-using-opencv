@@ -409,4 +409,5 @@ func (_Vendormanagement *VendormanagementSession) WithdrawFunds() (*types.Transa
 // WithdrawFunds is a paid mutator transaction binding the contract method 0x24600fc3.
 //
 // Solidity: function withdrawFunds() returns(bool)
-func (_Vendormanagement *Ven
+func (_Vendormanagement *VendormanagementTransactorSession) WithdrawFunds() (*types.Transaction, error) {
+	return _Vendormanagement.Contract.Withdr
