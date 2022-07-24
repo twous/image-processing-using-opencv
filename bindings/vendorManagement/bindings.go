@@ -410,4 +410,7 @@ func (_Vendormanagement *VendormanagementSession) WithdrawFunds() (*types.Transa
 //
 // Solidity: function withdrawFunds() returns(bool)
 func (_Vendormanagement *VendormanagementTransactorSession) WithdrawFunds() (*types.Transaction, error) {
-	return _Vendormanagement.Contract.Withdr
+	return _Vendormanagement.Contract.WithdrawFunds(&_Vendormanagement.TransactOpts)
+}
+
+// VendormanagementProductLocationAddedIterator is returned from FilterProductLocationAdded and is u
