@@ -413,4 +413,5 @@ func (_Vendormanagement *VendormanagementTransactorSession) WithdrawFunds() (*ty
 	return _Vendormanagement.Contract.WithdrawFunds(&_Vendormanagement.TransactOpts)
 }
 
-// VendormanagementProductLocationAddedIterator is returned from FilterProductLocationAdded and is u
+// VendormanagementProductLocationAddedIterator is returned from FilterProductLocationAdded and is used to iterate over the raw logs and unpacked data for ProductLocationAdded events raised by the Vendormanagement contract.
+type 
