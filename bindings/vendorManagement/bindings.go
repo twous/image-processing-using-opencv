@@ -415,4 +415,6 @@ func (_Vendormanagement *VendormanagementTransactorSession) WithdrawFunds() (*ty
 
 // VendormanagementProductLocationAddedIterator is returned from FilterProductLocationAdded and is used to iterate over the raw logs and unpacked data for ProductLocationAdded events raised by the Vendormanagement contract.
 type VendormanagementProductLocationAddedIterator struct {
-	Event *VendormanagementProductLocationAdded // Event contain
+	Event *VendormanagementProductLocationAdded // Event containing the contract specifics and raw log
+
+	contract *bind.BoundContract // Generic contract to use for unpacking e
