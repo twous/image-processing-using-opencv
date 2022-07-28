@@ -417,4 +417,7 @@ func (_Vendormanagement *VendormanagementTransactorSession) WithdrawFunds() (*ty
 type VendormanagementProductLocationAddedIterator struct {
 	Event *VendormanagementProductLocationAdded // Event containing the contract specifics and raw log
 
-	contract *bind.BoundContract // Generic contract to use for unpacking e
+	contract *bind.BoundContract // Generic contract to use for unpacking event data
+	event    string              // Event name to use for unpacking event data
+
+	logs chan types.Log        // Log channel rece
