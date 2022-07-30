@@ -423,4 +423,8 @@ type VendormanagementProductLocationAddedIterator struct {
 	logs chan types.Log        // Log channel receiving the found contract events
 	sub  ethereum.Subscription // Subscription for errors, completion and termination
 	done bool                  // Whether the subscription completed delivering logs
-	fail error                 // Occurred error to
+	fail error                 // Occurred error to stop iteration
+}
+
+// Next advances the iterator to the subsequent event, returning whether there
+// are any more ev
