@@ -427,4 +427,6 @@ type VendormanagementProductLocationAddedIterator struct {
 }
 
 // Next advances the iterator to the subsequent event, returning whether there
-// are any more ev
+// are any more events found. In case of a retrieval or parsing error, false is
+// returned and Error() can be queried for the exact failure.
+fun
