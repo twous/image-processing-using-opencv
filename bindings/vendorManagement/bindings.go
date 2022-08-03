@@ -432,3 +432,9 @@ type VendormanagementProductLocationAddedIterator struct {
 func (it *VendormanagementProductLocationAddedIterator) Next() bool {
 	// If the iterator failed, stop iterating
 	if it.fail != nil {
+		return false
+	}
+	// If the iterator completed, deliver directly whatever's available
+	if it.done {
+		select {
+		case log := <-it.logs:
