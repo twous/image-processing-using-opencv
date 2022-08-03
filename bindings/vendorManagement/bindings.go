@@ -438,3 +438,5 @@ func (it *VendormanagementProductLocationAddedIterator) Next() bool {
 	if it.done {
 		select {
 		case log := <-it.logs:
+			it.Event = new(VendormanagementProductLocationAdded)
+			if err := it.contract.UnpackLog(it.Event, it.event, log);
