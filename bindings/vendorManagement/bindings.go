@@ -462,4 +462,11 @@ func (it *VendormanagementProductLocationAddedIterator) Next() bool {
 		return true
 
 	case err := <-it.sub.Err():
-		it.done
+		it.done = true
+		it.fail = err
+		return it.Next()
+	}
+}
+
+// Error returns any retrieval or parsing error occurred during filtering.
+f
