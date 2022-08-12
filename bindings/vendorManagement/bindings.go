@@ -469,4 +469,8 @@ func (it *VendormanagementProductLocationAddedIterator) Next() bool {
 }
 
 // Error returns any retrieval or parsing error occurred during filtering.
-f
+func (it *VendormanagementProductLocationAddedIterator) Error() error {
+	return it.fail
+}
+
+// Close terminates the iteration process, 
