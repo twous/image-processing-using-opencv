@@ -484,4 +484,7 @@ func (it *VendormanagementProductLocationAddedIterator) Close() error {
 type VendormanagementProductLocationAdded struct {
 	Name     string
 	Location string
-	Raw      types.Log // Blockchain spec
+	Raw      types.Log // Blockchain specific contextual infos
+}
+
+// FilterProductLocationAdded is a free log retrieval operation binding the contract event 0x20eca5c8f895538bd583
