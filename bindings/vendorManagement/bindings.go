@@ -473,4 +473,7 @@ func (it *VendormanagementProductLocationAddedIterator) Error() error {
 	return it.fail
 }
 
-// Close terminates the iteration process, 
+// Close terminates the iteration process, releasing any pending underlying
+// resources.
+func (it *VendormanagementProductLocationAddedIterator) Close() error {
+	it.sub.Unsubscri
