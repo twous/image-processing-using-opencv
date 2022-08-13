@@ -476,4 +476,8 @@ func (it *VendormanagementProductLocationAddedIterator) Error() error {
 // Close terminates the iteration process, releasing any pending underlying
 // resources.
 func (it *VendormanagementProductLocationAddedIterator) Close() error {
-	it.sub.Unsubscri
+	it.sub.Unsubscribe()
+	return nil
+}
+
+// VendormanagementProductLocationAdded represents a ProductLocationAdded event raised by the Vendorm
