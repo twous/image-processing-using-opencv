@@ -480,4 +480,8 @@ func (it *VendormanagementProductLocationAddedIterator) Close() error {
 	return nil
 }
 
-// VendormanagementProductLocationAdded represents a ProductLocationAdded event raised by the Vendorm
+// VendormanagementProductLocationAdded represents a ProductLocationAdded event raised by the Vendormanagement contract.
+type VendormanagementProductLocationAdded struct {
+	Name     string
+	Location string
+	Raw      types.Log // Blockchain spec
