@@ -496,4 +496,7 @@ func (_Vendormanagement *VendormanagementFilterer) FilterProductLocationAdded(op
 	if err != nil {
 		return nil, err
 	}
-	return &VendormanagementProductLocationAddedIterator{contract: _Vendormanagement.contract, 
+	return &VendormanagementProductLocationAddedIterator{contract: _Vendormanagement.contract, event: "ProductLocationAdded", logs: logs, sub: sub}, nil
+}
+
+// WatchProductLocationAdded is a free log subscription ope
