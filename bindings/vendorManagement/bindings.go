@@ -493,4 +493,7 @@ type VendormanagementProductLocationAdded struct {
 func (_Vendormanagement *VendormanagementFilterer) FilterProductLocationAdded(opts *bind.FilterOpts) (*VendormanagementProductLocationAddedIterator, error) {
 
 	logs, sub, err := _Vendormanagement.contract.FilterLogs(opts, "ProductLocationAdded")
-	if err
+	if err != nil {
+		return nil, err
+	}
+	return &VendormanagementProductLocationAddedIterator{contract: _Vendormanagement.contract, 
