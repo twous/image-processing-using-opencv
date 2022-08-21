@@ -501,4 +501,5 @@ func (_Vendormanagement *VendormanagementFilterer) FilterProductLocationAdded(op
 
 // WatchProductLocationAdded is a free log subscription operation binding the contract event 0x20eca5c8f895538bd583d98f6dc289ffd029bf3d0a3b5362dffeace9ab6634dc.
 //
-// Solidity:
+// Solidity: event ProductLocationAdded(string _name, string _location)
+func (_Vendormanagement *VendormanagementFilter
