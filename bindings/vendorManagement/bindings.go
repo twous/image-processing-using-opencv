@@ -506,4 +506,10 @@ func (_Vendormanagement *VendormanagementFilterer) WatchProductLocationAdded(opt
 
 	logs, sub, err := _Vendormanagement.contract.WatchLogs(opts, "ProductLocationAdded")
 	if err != nil {
-		retu
+		return nil, err
+	}
+	return event.NewSubscription(func(quit <-chan struct{}) error {
+		defer sub.Unsubscribe()
+		for {
+			select {
+		
