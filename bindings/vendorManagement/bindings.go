@@ -512,4 +512,6 @@ func (_Vendormanagement *VendormanagementFilterer) WatchProductLocationAdded(opt
 		defer sub.Unsubscribe()
 		for {
 			select {
-		
+			case log := <-logs:
+				// New log arrived, parse the event and forward to the user
+				event := new(VendormanagementProd
