@@ -524,4 +524,13 @@ func (_Vendormanagement *VendormanagementFilterer) WatchProductLocationAdded(opt
 				case sink <- event:
 				case err := <-sub.Err():
 					return err
-				case <-
+				case <-quit:
+					return nil
+				}
+			case err := <-sub.Err():
+				return err
+			case <-quit:
+				return nil
+			}
+		}
+	}), n
