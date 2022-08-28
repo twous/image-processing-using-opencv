@@ -516,4 +516,12 @@ func (_Vendormanagement *VendormanagementFilterer) WatchProductLocationAdded(opt
 				// New log arrived, parse the event and forward to the user
 				event := new(VendormanagementProductLocationAdded)
 				if err := _Vendormanagement.contract.UnpackLog(event, "ProductLocationAdded", log); err != nil {
-			
+					return err
+				}
+				event.Raw = log
+
+				select {
+				case sink <- event:
+				case err := <-sub.Err():
+					return err
+				case <-
