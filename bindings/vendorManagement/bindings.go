@@ -533,4 +533,7 @@ func (_Vendormanagement *VendormanagementFilterer) WatchProductLocationAdded(opt
 				return nil
 			}
 		}
-	}), n
+	}), nil
+}
+
+// ParseProductLocationAdded is a log parse operation binding the contract event 0x20eca5c8f895538bd583d98f6dc289ffd029bf3d0a3b5362dffeace9ab66
