@@ -540,4 +540,8 @@ func (_Vendormanagement *VendormanagementFilterer) WatchProductLocationAdded(opt
 //
 // Solidity: event ProductLocationAdded(string _name, string _location)
 func (_Vendormanagement *VendormanagementFilterer) ParseProductLocationAdded(log types.Log) (*VendormanagementProductLocationAdded, error) {
-	event := new(VendormanagementProductLocation
+	event := new(VendormanagementProductLocationAdded)
+	if err := _Vendormanagement.contract.UnpackLog(event, "ProductLocationAdded", log); err != nil {
+		return nil, err
+	}
+	r
