@@ -547,4 +547,6 @@ func (_Vendormanagement *VendormanagementFilterer) ParseProductLocationAdded(log
 	return event, nil
 }
 
-// VendormanagementProductLocationRemovedIterator is returned from FilterProductLocationRemoved and is used to iterate over the raw logs and unpacked data for ProductLocationRemoved events raised by the Vendormana
+// VendormanagementProductLocationRemovedIterator is returned from FilterProductLocationRemoved and is used to iterate over the raw logs and unpacked data for ProductLocationRemoved events raised by the Vendormanagement contract.
+type VendormanagementProductLocationRemovedIterator struct {
+	Event *VendormanagementProductLoc
