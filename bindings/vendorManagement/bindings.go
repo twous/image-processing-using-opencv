@@ -551,4 +551,7 @@ func (_Vendormanagement *VendormanagementFilterer) ParseProductLocationAdded(log
 type VendormanagementProductLocationRemovedIterator struct {
 	Event *VendormanagementProductLocationRemoved // Event containing the contract specifics and raw log
 
-	contract *bind.BoundContract // Generic contract t
+	contract *bind.BoundContract // Generic contract to use for unpacking event data
+	event    string              // Event name to use for unpacking event data
+
+	logs chan types.Log        //
