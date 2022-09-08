@@ -574,4 +574,14 @@ func (it *VendormanagementProductLocationRemovedIterator) Next() bool {
 		case log := <-it.logs:
 			it.Event = new(VendormanagementProductLocationRemoved)
 			if err := it.contract.UnpackLog(it.Event, it.event, log); err != nil {
-				it.fail = e
+				it.fail = err
+				return false
+			}
+			it.Event.Raw = log
+			return true
+
+		default:
+			return false
+		}
+	}
+	// Iterator still in p
