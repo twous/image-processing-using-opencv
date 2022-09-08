@@ -584,4 +584,7 @@ func (it *VendormanagementProductLocationRemovedIterator) Next() bool {
 			return false
 		}
 	}
-	// Iterator still in p
+	// Iterator still in progress, wait for either a data or an error event
+	select {
+	case log := <-it.logs:
+		it.Event = new(VendormanagementProductL
