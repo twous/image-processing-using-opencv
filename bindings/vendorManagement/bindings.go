@@ -592,4 +592,14 @@ func (it *VendormanagementProductLocationRemovedIterator) Next() bool {
 			it.fail = err
 			return false
 		}
-		it.Ev
+		it.Event.Raw = log
+		return true
+
+	case err := <-it.sub.Err():
+		it.done = true
+		it.fail = err
+		return it.Next()
+	}
+}
+
+// Erro
