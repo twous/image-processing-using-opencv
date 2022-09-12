@@ -587,4 +587,9 @@ func (it *VendormanagementProductLocationRemovedIterator) Next() bool {
 	// Iterator still in progress, wait for either a data or an error event
 	select {
 	case log := <-it.logs:
-		it.Event = new(VendormanagementProductL
+		it.Event = new(VendormanagementProductLocationRemoved)
+		if err := it.contract.UnpackLog(it.Event, it.event, log); err != nil {
+			it.fail = err
+			return false
+		}
+		it.Ev
