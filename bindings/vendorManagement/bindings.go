@@ -603,4 +603,9 @@ func (it *VendormanagementProductLocationRemovedIterator) Next() bool {
 }
 
 // Error returns any retrieval or parsing error occurred during filtering.
-func (it *VendormanagementProductLocationRemovedIterator)
+func (it *VendormanagementProductLocationRemovedIterator) Error() error {
+	return it.fail
+}
+
+// Close terminates the iteration process, releasing any pending underlying
+// resour
