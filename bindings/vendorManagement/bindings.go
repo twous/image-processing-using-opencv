@@ -608,4 +608,10 @@ func (it *VendormanagementProductLocationRemovedIterator) Error() error {
 }
 
 // Close terminates the iteration process, releasing any pending underlying
-// resour
+// resources.
+func (it *VendormanagementProductLocationRemovedIterator) Close() error {
+	it.sub.Unsubscribe()
+	return nil
+}
+
+// Vendor
