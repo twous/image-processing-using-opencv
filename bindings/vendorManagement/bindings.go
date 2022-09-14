@@ -615,4 +615,7 @@ func (it *VendormanagementProductLocationRemovedIterator) Close() error {
 }
 
 // VendormanagementProductLocationRemoved represents a ProductLocationRemoved event raised by the Vendormanagement contract.
-type Vendo
+type VendormanagementProductLocationRemoved struct {
+	Name     string
+	Location string
+	Raw      types.Log // Blockchain 
