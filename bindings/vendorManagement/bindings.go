@@ -618,4 +618,7 @@ func (it *VendormanagementProductLocationRemovedIterator) Close() error {
 type VendormanagementProductLocationRemoved struct {
 	Name     string
 	Location string
-	Raw      types.Log // Blockchain 
+	Raw      types.Log // Blockchain specific contextual infos
+}
+
+// FilterProductLocationRemoved is a free log retrieval operation binding the contract event 0x6f8
