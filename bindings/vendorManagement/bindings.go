@@ -614,4 +614,5 @@ func (it *VendormanagementProductLocationRemovedIterator) Close() error {
 	return nil
 }
 
-// Vendor
+// VendormanagementProductLocationRemoved represents a ProductLocationRemoved event raised by the Vendormanagement contract.
+type Vendo
