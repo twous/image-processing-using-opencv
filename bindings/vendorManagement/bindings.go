@@ -621,4 +621,6 @@ type VendormanagementProductLocationRemoved struct {
 	Raw      types.Log // Blockchain specific contextual infos
 }
 
-// FilterProductLocationRemoved is a free log retrieval operation binding the contract event 0x6f8
+// FilterProductLocationRemoved is a free log retrieval operation binding the contract event 0x6f87e5eed57f39feb4e7480e0eaa01353c1806e3a63675ebe5095b8f338cd62f.
+//
+// Solidity: event ProductLocationRemoved(stri
