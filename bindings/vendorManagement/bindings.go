@@ -624,4 +624,6 @@ type VendormanagementProductLocationRemoved struct {
 // FilterProductLocationRemoved is a free log retrieval operation binding the contract event 0x6f87e5eed57f39feb4e7480e0eaa01353c1806e3a63675ebe5095b8f338cd62f.
 //
 // Solidity: event ProductLocationRemoved(string _name, string _location)
-func (_Vendormanagement *VendormanagementFilterer) FilterProductLocationRemoved(opts *bind.Filte
+func (_Vendormanagement *VendormanagementFilterer) FilterProductLocationRemoved(opts *bind.FilterOpts) (*VendormanagementProductLocationRemovedIterator, error) {
+
+	logs, sub, err := _Vendormanagement.contract.FilterLogs(opts, "
