@@ -630,4 +630,7 @@ func (_Vendormanagement *VendormanagementFilterer) FilterProductLocationRemoved(
 	if err != nil {
 		return nil, err
 	}
-	return &VendormanagementProductLocationRemovedIt
+	return &VendormanagementProductLocationRemovedIterator{contract: _Vendormanagement.contract, event: "ProductLocationRemoved", logs: logs, sub: sub}, nil
+}
+
+// WatchProductLocation
