@@ -626,4 +626,8 @@ type VendormanagementProductLocationRemoved struct {
 // Solidity: event ProductLocationRemoved(string _name, string _location)
 func (_Vendormanagement *VendormanagementFilterer) FilterProductLocationRemoved(opts *bind.FilterOpts) (*VendormanagementProductLocationRemovedIterator, error) {
 
-	logs, sub, err := _Vendormanagement.contract.FilterLogs(opts, "
+	logs, sub, err := _Vendormanagement.contract.FilterLogs(opts, "ProductLocationRemoved")
+	if err != nil {
+		return nil, err
+	}
+	return &VendormanagementProductLocationRemovedIt
