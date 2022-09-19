@@ -633,4 +633,7 @@ func (_Vendormanagement *VendormanagementFilterer) FilterProductLocationRemoved(
 	return &VendormanagementProductLocationRemovedIterator{contract: _Vendormanagement.contract, event: "ProductLocationRemoved", logs: logs, sub: sub}, nil
 }
 
-// WatchProductLocationRemoved is a free log subscription operation binding the contract event 0x6f87e5eed57f39feb4e7480e0eaa01353c1806e3a63675ebe5095b8f338
+// WatchProductLocationRemoved is a free log subscription operation binding the contract event 0x6f87e5eed57f39feb4e7480e0eaa01353c1806e3a63675ebe5095b8f338cd62f.
+//
+// Solidity: event ProductLocationRemoved(string _name, string _location)
+func (_Vendormanagement *
