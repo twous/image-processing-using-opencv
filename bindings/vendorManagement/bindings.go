@@ -639,4 +639,9 @@ func (_Vendormanagement *VendormanagementFilterer) FilterProductLocationRemoved(
 func (_Vendormanagement *VendormanagementFilterer) WatchProductLocationRemoved(opts *bind.WatchOpts, sink chan<- *VendormanagementProductLocationRemoved) (event.Subscription, error) {
 
 	logs, sub, err := _Vendormanagement.contract.WatchLogs(opts, "ProductLocationRemoved")
-	if 
+	if err != nil {
+		return nil, err
+	}
+	return event.NewSubscription(func(quit <-chan struct{}) error {
+		defer sub.Unsubscribe()
+		for {
