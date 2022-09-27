@@ -648,4 +648,8 @@ func (_Vendormanagement *VendormanagementFilterer) WatchProductLocationRemoved(o
 			select {
 			case log := <-logs:
 				// New log arrived, parse the event and forward to the user
-				event := new(VendormanagementPro
+				event := new(VendormanagementProductLocationRemoved)
+				if err := _Vendormanagement.contract.UnpackLog(event, "ProductLocationRemoved", log); err != nil {
+					return err
+				}
+		
