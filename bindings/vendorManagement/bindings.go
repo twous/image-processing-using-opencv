@@ -645,3 +645,7 @@ func (_Vendormanagement *VendormanagementFilterer) WatchProductLocationRemoved(o
 	return event.NewSubscription(func(quit <-chan struct{}) error {
 		defer sub.Unsubscribe()
 		for {
+			select {
+			case log := <-logs:
+				// New log arrived, parse the event and forward to the user
+				event := new(VendormanagementPro
