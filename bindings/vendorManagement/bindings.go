@@ -652,4 +652,11 @@ func (_Vendormanagement *VendormanagementFilterer) WatchProductLocationRemoved(o
 				if err := _Vendormanagement.contract.UnpackLog(event, "ProductLocationRemoved", log); err != nil {
 					return err
 				}
-		
+				event.Raw = log
+
+				select {
+				case sink <- event:
+				case err := <-sub.Err():
+					return err
+				case <-quit:
+					return
