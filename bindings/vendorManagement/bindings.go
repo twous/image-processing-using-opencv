@@ -659,4 +659,15 @@ func (_Vendormanagement *VendormanagementFilterer) WatchProductLocationRemoved(o
 				case err := <-sub.Err():
 					return err
 				case <-quit:
-					return
+					return nil
+				}
+			case err := <-sub.Err():
+				return err
+			case <-quit:
+				return nil
+			}
+		}
+	}), nil
+}
+
+// ParseProductLocationRemoved is a
