@@ -670,4 +670,6 @@ func (_Vendormanagement *VendormanagementFilterer) WatchProductLocationRemoved(o
 	}), nil
 }
 
-// ParseProductLocationRemoved is a
+// ParseProductLocationRemoved is a log parse operation binding the contract event 0x6f87e5eed57f39feb4e7480e0eaa01353c1806e3a63675ebe5095b8f338cd62f.
+//
+// So
