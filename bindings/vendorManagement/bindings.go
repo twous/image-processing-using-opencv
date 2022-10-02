@@ -672,4 +672,5 @@ func (_Vendormanagement *VendormanagementFilterer) WatchProductLocationRemoved(o
 
 // ParseProductLocationRemoved is a log parse operation binding the contract event 0x6f87e5eed57f39feb4e7480e0eaa01353c1806e3a63675ebe5095b8f338cd62f.
 //
-// So
+// Solidity: event ProductLocationRemoved(string _name, string _location)
+func (_Vendormanagement *VendormanagementFilterer) ParseProduc
