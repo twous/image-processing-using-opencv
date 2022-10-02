@@ -675,3 +675,7 @@ func (_Vendormanagement *VendormanagementFilterer) WatchProductLocationRemoved(o
 // Solidity: event ProductLocationRemoved(string _name, string _location)
 func (_Vendormanagement *VendormanagementFilterer) ParseProductLocationRemoved(log types.Log) (*VendormanagementProductLocationRemoved, error) {
 	event := new(VendormanagementProductLocationRemoved)
+	if err := _Vendormanagement.contract.UnpackLog(event, "ProductLocationRemoved", log); err != nil {
+		return nil, err
+	}
+	return ev
