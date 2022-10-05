@@ -678,4 +678,7 @@ func (_Vendormanagement *VendormanagementFilterer) ParseProductLocationRemoved(l
 	if err := _Vendormanagement.contract.UnpackLog(event, "ProductLocationRemoved", log); err != nil {
 		return nil, err
 	}
-	return ev
+	return event, nil
+}
+
+// VendormanagementProductRegisteredIterator is returned from FilterProductRegistered and is used
