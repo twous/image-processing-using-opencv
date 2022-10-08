@@ -683,4 +683,7 @@ func (_Vendormanagement *VendormanagementFilterer) ParseProductLocationRemoved(l
 
 // VendormanagementProductRegisteredIterator is returned from FilterProductRegistered and is used to iterate over the raw logs and unpacked data for ProductRegistered events raised by the Vendormanagement contract.
 type VendormanagementProductRegisteredIterator struct {
-	Event *VendormanagementProductRegistered // Event containing the contract s
+	Event *VendormanagementProductRegistered // Event containing the contract specifics and raw log
+
+	contract *bind.BoundContract // Generic contract to use for unpacking event data
+	event    string           
