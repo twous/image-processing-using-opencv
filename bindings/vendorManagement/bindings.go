@@ -690,4 +690,8 @@ type VendormanagementProductRegisteredIterator struct {
 
 	logs chan types.Log        // Log channel receiving the found contract events
 	sub  ethereum.Subscription // Subscription for errors, completion and termination
-	done bool                  // Whether the subscription com
+	done bool                  // Whether the subscription completed delivering logs
+	fail error                 // Occurred error to stop iteration
+}
+
+// Next advances the i
