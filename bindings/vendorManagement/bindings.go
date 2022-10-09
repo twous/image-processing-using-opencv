@@ -694,4 +694,5 @@ type VendormanagementProductRegisteredIterator struct {
 	fail error                 // Occurred error to stop iteration
 }
 
-// Next advances the i
+// Next advances the iterator to the subsequent event, returning whether there
+// are any more events found. In case of a retrieval or pa
