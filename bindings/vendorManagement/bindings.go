@@ -702,4 +702,8 @@ func (it *VendormanagementProductRegisteredIterator) Next() bool {
 	if it.fail != nil {
 		return false
 	}
-	// If the iterator complet
+	// If the iterator completed, deliver directly whatever's available
+	if it.done {
+		select {
+		case log := <-it.logs:
+			it.Event = new(VendormanagementProduct
