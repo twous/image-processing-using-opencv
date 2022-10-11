@@ -710,4 +710,12 @@ func (it *VendormanagementProductRegisteredIterator) Next() bool {
 			if err := it.contract.UnpackLog(it.Event, it.event, log); err != nil {
 				it.fail = err
 				return false
-		
+			}
+			it.Event.Raw = log
+			return true
+
+		default:
+			return false
+		}
+	}
+	// Iterator still in progress, wait for either a data o
