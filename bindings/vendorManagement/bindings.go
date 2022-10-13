@@ -728,3 +728,12 @@ func (it *VendormanagementProductRegisteredIterator) Next() bool {
 		}
 		it.Event.Raw = log
 		return true
+
+	case err := <-it.sub.Err():
+		it.done = true
+		it.fail = err
+		return it.Next()
+	}
+}
+
+// Error returns any retrieval or par
