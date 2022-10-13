@@ -736,4 +736,9 @@ func (it *VendormanagementProductRegisteredIterator) Next() bool {
 	}
 }
 
-// Error returns any retrieval or par
+// Error returns any retrieval or parsing error occurred during filtering.
+func (it *VendormanagementProductRegisteredIterator) Error() error {
+	return it.fail
+}
+
+// Close terminates
