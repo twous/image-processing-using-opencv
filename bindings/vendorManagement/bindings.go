@@ -741,4 +741,6 @@ func (it *VendormanagementProductRegisteredIterator) Error() error {
 	return it.fail
 }
 
-// Close terminates
+// Close terminates the iteration process, releasing any pending underlying
+// resources.
+func (it *VendormanagementProductRegisteredIterator) Close() 
