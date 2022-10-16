@@ -743,4 +743,9 @@ func (it *VendormanagementProductRegisteredIterator) Error() error {
 
 // Close terminates the iteration process, releasing any pending underlying
 // resources.
-func (it *VendormanagementProductRegisteredIterator) Close() 
+func (it *VendormanagementProductRegisteredIterator) Close() error {
+	it.sub.Unsubscribe()
+	return nil
+}
+
+// VendormanagementProductRegistered represents a ProductRegistered ev
