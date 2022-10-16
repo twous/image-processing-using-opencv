@@ -748,4 +748,7 @@ func (it *VendormanagementProductRegisteredIterator) Close() error {
 	return nil
 }
 
-// VendormanagementProductRegistered represents a ProductRegistered ev
+// VendormanagementProductRegistered represents a ProductRegistered event raised by the Vendormanagement contract.
+type VendormanagementProductRegistered struct {
+	Name      string
+	Locations [
