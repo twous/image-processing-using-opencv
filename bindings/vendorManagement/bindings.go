@@ -751,4 +751,9 @@ func (it *VendormanagementProductRegisteredIterator) Close() error {
 // VendormanagementProductRegistered represents a ProductRegistered event raised by the Vendormanagement contract.
 type VendormanagementProductRegistered struct {
 	Name      string
-	Locations [
+	Locations []string
+	Cost      *big.Int
+	Raw       types.Log // Blockchain specific contextual infos
+}
+
+// FilterProductRegistered is a free log retriev
