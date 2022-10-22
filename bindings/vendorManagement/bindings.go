@@ -761,4 +761,8 @@ type VendormanagementProductRegistered struct {
 // Solidity: event ProductRegistered(string _name, string[] _locations, uint256 _cost)
 func (_Vendormanagement *VendormanagementFilterer) FilterProductRegistered(opts *bind.FilterOpts) (*VendormanagementProductRegisteredIterator, error) {
 
-	logs, sub, err := _Vendormanagement.co
+	logs, sub, err := _Vendormanagement.contract.FilterLogs(opts, "ProductRegistered")
+	if err != nil {
+		return nil, err
+	}
+	return &VendormanagementProductRegisteredIt
