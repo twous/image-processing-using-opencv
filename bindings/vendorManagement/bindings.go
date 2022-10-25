@@ -765,4 +765,7 @@ func (_Vendormanagement *VendormanagementFilterer) FilterProductRegistered(opts 
 	if err != nil {
 		return nil, err
 	}
-	return &VendormanagementProductRegisteredIt
+	return &VendormanagementProductRegisteredIterator{contract: _Vendormanagement.contract, event: "ProductRegistered", logs: logs, sub: sub}, nil
+}
+
+// WatchProductRegistere
