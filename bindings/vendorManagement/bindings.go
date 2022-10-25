@@ -768,4 +768,5 @@ func (_Vendormanagement *VendormanagementFilterer) FilterProductRegistered(opts 
 	return &VendormanagementProductRegisteredIterator{contract: _Vendormanagement.contract, event: "ProductRegistered", logs: logs, sub: sub}, nil
 }
 
-// WatchProductRegistere
+// WatchProductRegistered is a free log subscription operation binding the contract event 0x3c16f324d383d6feb7b8939d45155634c4ba851efa4ea07b79cc280489899d1d.
+/
