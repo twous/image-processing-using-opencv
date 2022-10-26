@@ -777,3 +777,8 @@ func (_Vendormanagement *VendormanagementFilterer) WatchProductRegistered(opts *
 	if err != nil {
 		return nil, err
 	}
+	return event.NewSubscription(func(quit <-chan struct{}) error {
+		defer sub.Unsubscribe()
+		for {
+			select {
+			case log := <-logs
