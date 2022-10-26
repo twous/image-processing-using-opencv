@@ -781,4 +781,7 @@ func (_Vendormanagement *VendormanagementFilterer) WatchProductRegistered(opts *
 		defer sub.Unsubscribe()
 		for {
 			select {
-			case log := <-logs
+			case log := <-logs:
+				// New log arrived, parse the event and forward to the user
+				event := new(VendormanagementProductRegistered)
+				if err := _Ven
