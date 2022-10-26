@@ -773,4 +773,7 @@ func (_Vendormanagement *VendormanagementFilterer) FilterProductRegistered(opts 
 // Solidity: event ProductRegistered(string _name, string[] _locations, uint256 _cost)
 func (_Vendormanagement *VendormanagementFilterer) WatchProductRegistered(opts *bind.WatchOpts, sink chan<- *VendormanagementProductRegistered) (event.Subscription, error) {
 
-	logs, s
+	logs, sub, err := _Vendormanagement.contract.WatchLogs(opts, "ProductRegistered")
+	if err != nil {
+		return nil, err
+	}
