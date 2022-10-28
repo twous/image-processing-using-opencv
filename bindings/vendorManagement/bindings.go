@@ -789,4 +789,10 @@ func (_Vendormanagement *VendormanagementFilterer) WatchProductRegistered(opts *
 				}
 				event.Raw = log
 
-				sele
+				select {
+				case sink <- event:
+				case err := <-sub.Err():
+					return err
+				case <-quit:
+					return nil
+	
