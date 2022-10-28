@@ -784,4 +784,9 @@ func (_Vendormanagement *VendormanagementFilterer) WatchProductRegistered(opts *
 			case log := <-logs:
 				// New log arrived, parse the event and forward to the user
 				event := new(VendormanagementProductRegistered)
-				if err := _Ven
+				if err := _Vendormanagement.contract.UnpackLog(event, "ProductRegistered", log); err != nil {
+					return err
+				}
+				event.Raw = log
+
+				sele
