@@ -795,4 +795,14 @@ func (_Vendormanagement *VendormanagementFilterer) WatchProductRegistered(opts *
 					return err
 				case <-quit:
 					return nil
-	
+				}
+			case err := <-sub.Err():
+				return err
+			case <-quit:
+				return nil
+			}
+		}
+	}), nil
+}
+
+// ParseProductRe
