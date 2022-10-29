@@ -807,4 +807,5 @@ func (_Vendormanagement *VendormanagementFilterer) WatchProductRegistered(opts *
 
 // ParseProductRegistered is a log parse operation binding the contract event 0x3c16f324d383d6feb7b8939d45155634c4ba851efa4ea07b79cc280489899d1d.
 //
-// Solidi
+// Solidity: event ProductRegistered(string _name, string[] _locations, uint256 _cost)
+func (_Vendormanagement *VendormanagementF
