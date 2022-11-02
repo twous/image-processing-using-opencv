@@ -809,4 +809,5 @@ func (_Vendormanagement *VendormanagementFilterer) WatchProductRegistered(opts *
 //
 // Solidity: event ProductRegistered(string _name, string[] _locations, uint256 _cost)
 func (_Vendormanagement *VendormanagementFilterer) ParseProductRegistered(log types.Log) (*VendormanagementProductRegistered, error) {
-	event := n
+	event := new(VendormanagementProductRegistered)
+	if err := _Vendormanagement.contract.UnpackLog(event, "ProductRegistered", log); err
