@@ -8,4 +8,8 @@ contract VendingMachine {
     using SafeMath for uint256;
 
     string public location;
-    address publ
+    address public backend;
+
+    // vendors selling items through the machine
+    mapping(address => bool) public vendors;
+    // maps
