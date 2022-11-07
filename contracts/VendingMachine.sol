@@ -12,4 +12,6 @@ contract VendingMachine {
 
     // vendors selling items through the machine
     mapping(address => bool) public vendors;
-    // maps
+    // maps vendor address to their vendor contract
+    mapping(address => address) public vendorContracts;
+    // maps vendor names to their
