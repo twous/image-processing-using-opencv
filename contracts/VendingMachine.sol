@@ -20,4 +20,9 @@ contract VendingMachine {
     event ProductPurchased(string _vendor, string _product, uint256 _timestamp);
 
     constructor(string memory _location, address _backend) public {
-        location = _locatio
+        location = _location;
+        backend = _backend;
+    }
+
+    function addVendor(string memory _name, address _vendorContract) public returns (bool) {
+ 
