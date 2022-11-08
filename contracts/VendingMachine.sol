@@ -17,4 +17,7 @@ contract VendingMachine {
     // maps vendor names to their vendor contract
     mapping(string => address) public vendorNames;
 
-    event ProductPurchased(string
+    event ProductPurchased(string _vendor, string _product, uint256 _timestamp);
+
+    constructor(string memory _location, address _backend) public {
+        location = _locatio
