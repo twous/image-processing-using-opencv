@@ -28,4 +28,6 @@ contract VendingMachine {
         require(!vendors[msg.sender], "vendor must not be registered");
         require(vendorNames[_name] == address(0), "name must not be taken");
         VendorManagementI vmI = VendorManagementI(_vendorContract);
-        require(vmI.owner
+        require(vmI.owner() == msg.sender, "caller must be vendor manager");
+        vendors[msg.sender] = true;
+        vendorContracts[msg.sender
