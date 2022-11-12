@@ -25,4 +25,5 @@ contract VendingMachine {
     }
 
     function addVendor(string memory _name, address _vendorContract) public returns (bool) {
- 
+        require(!vendors[msg.sender], "vendor must not be registered");
+        require(vendorNames[_name] == address(0), "na
