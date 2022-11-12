@@ -30,4 +30,9 @@ contract VendingMachine {
         VendorManagementI vmI = VendorManagementI(_vendorContract);
         require(vmI.owner() == msg.sender, "caller must be vendor manager");
         vendors[msg.sender] = true;
-        vendorContracts[msg.sender
+        vendorContracts[msg.sender] = _vendorContract;
+        vendorNames[_name] = _vendorContract;
+        return true;
+    }
+
+    function purchaseProduct(s
