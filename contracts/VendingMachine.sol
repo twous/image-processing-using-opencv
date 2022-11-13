@@ -35,4 +35,5 @@ contract VendingMachine {
         return true;
     }
 
-    function purchaseProduct(s
+    function purchaseProduct(string memory _vendor, string memory _product) public payable returns (bool) {
+        require(forSaleAtMachine(_vendor, _product
