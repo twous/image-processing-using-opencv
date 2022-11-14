@@ -36,4 +36,6 @@ contract VendingMachine {
     }
 
     function purchaseProduct(string memory _vendor, string memory _product) public payable returns (bool) {
-        require(forSaleAtMachine(_vendor, _product
+        require(forSaleAtMachine(_vendor, _product), "product not for sale");
+        VendorManagementI vmI = VendorManagementI(vendorNames[_vendor]);
+        (, uint256 cost) = vmI.pr
