@@ -38,4 +38,6 @@ contract VendingMachine {
     function purchaseProduct(string memory _vendor, string memory _product) public payable returns (bool) {
         require(forSaleAtMachine(_vendor, _product), "product not for sale");
         VendorManagementI vmI = VendorManagementI(vendorNames[_vendor]);
-        (, uint256 cost) = vmI.pr
+        (, uint256 cost) = vmI.products(_product);
+        require(cost == msg.value, "incorrect payment amount");
+        // convert unpayable address to payable
