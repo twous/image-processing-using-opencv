@@ -41,3 +41,6 @@ contract VendingMachine {
         (, uint256 cost) = vmI.products(_product);
         require(cost == msg.value, "incorrect payment amount");
         // convert unpayable address to payable
+        address(uint160(vendorNames[_vendor])).transfer(msg.value);
+        emit ProductPurchased(_vendor, _product, now);
+        
