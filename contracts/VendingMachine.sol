@@ -43,4 +43,8 @@ contract VendingMachine {
         // convert unpayable address to payable
         address(uint160(vendorNames[_vendor])).transfer(msg.value);
         emit ProductPurchased(_vendor, _product, now);
-        
+        return true;
+    }
+
+    // enables delegated purchasing
+    function backendPurchaseProduct(string memory _vendor, strin
