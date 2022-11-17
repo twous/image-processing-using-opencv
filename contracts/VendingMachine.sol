@@ -47,4 +47,6 @@ contract VendingMachine {
     }
 
     // enables delegated purchasing
-    function backendPurchaseProduct(string memory _vendor, strin
+    function backendPurchaseProduct(string memory _vendor, string memory _product) public returns (bool) {
+        require(msg.sender == backend, "caller must be backend");
+        re
