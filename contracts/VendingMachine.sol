@@ -50,4 +50,9 @@ contract VendingMachine {
     function backendPurchaseProduct(string memory _vendor, string memory _product) public returns (bool) {
         require(msg.sender == backend, "caller must be backend");
         require(forSaleAtMachine(_vendor, _product), "product not for sale");
-        emit ProductPurchased(_vendor
+        emit ProductPurchased(_vendor, _product, now);
+        return true;
+    }
+
+
+    function forSaleAtMachine(string memory _vendor, string memory _product) internal view retur
