@@ -59,4 +59,6 @@ contract VendingMachine {
         require(vendorNames[_vendor] != address(0), "vendor not registered with machine");
         VendorManagementI vmI = VendorManagementI(vendorNames[_vendor]);
         require(vmI.soldAt(_product, location), "product not for sale at machine");
- 
+        return true;
+    }
+}
