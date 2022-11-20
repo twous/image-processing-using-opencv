@@ -57,4 +57,6 @@ contract VendingMachine {
 
     function forSaleAtMachine(string memory _vendor, string memory _product) internal view returns (bool) {
         require(vendorNames[_vendor] != address(0), "vendor not registered with machine");
-        VendorManage
+        VendorManagementI vmI = VendorManagementI(vendorNames[_vendor]);
+        require(vmI.soldAt(_product, location), "product not for sale at machine");
+ 
