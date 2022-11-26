@@ -9,4 +9,8 @@ contract VendorFactory {
     address[] public vendorContracts;
 
     mapping(address => bool) public registeredVendors;
-    // k1 = vendor manager
+    // k1 = vendor manager address
+    mapping(address => address) public vendorContract;
+
+    function newVendor() public returns (bool) {
+        // ensure t
