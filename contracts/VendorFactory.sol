@@ -15,4 +15,7 @@ contract VendorFactory {
     function newVendor() public returns (bool) {
         // ensure they aren't registered
         require(!registeredVendors[msg.sender], "must not be registered");
-        // deploy the vendor ma
+        // deploy the vendor management contract
+        VendorManagement contractAddr = new VendorManagement();
+        // update vendor contract array
+        vendorContracts.push(a
