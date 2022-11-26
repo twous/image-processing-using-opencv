@@ -13,4 +13,6 @@ contract VendorFactory {
     mapping(address => address) public vendorContract;
 
     function newVendor() public returns (bool) {
-        // ensure t
+        // ensure they aren't registered
+        require(!registeredVendors[msg.sender], "must not be registered");
+        // deploy the vendor ma
