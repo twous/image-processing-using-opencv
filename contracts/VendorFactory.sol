@@ -21,4 +21,6 @@ contract VendorFactory {
         vendorContracts.push(address(contractAddr));
         // update registered vendors
         registeredVendors[msg.sender] = true;
-        // update 
+        // update vendor management address to contract mapping
+        vendorContract[msg.sender] = address(contractAddr);
+        return true;
