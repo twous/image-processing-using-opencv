@@ -18,4 +18,7 @@ contract VendorFactory {
         // deploy the vendor management contract
         VendorManagement contractAddr = new VendorManagement();
         // update vendor contract array
-        vendorContracts.push(a
+        vendorContracts.push(address(contractAddr));
+        // update registered vendors
+        registeredVendors[msg.sender] = true;
+        // update 
