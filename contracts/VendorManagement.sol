@@ -5,4 +5,13 @@ pragma experimental ABIEncoderV2;
 contract VendorManagement {
     address public owner;
     bytes32 public id;
-    bool public withdraw
+    bool public withdrawLock;
+
+
+    struct Product {
+        string name;
+        uint256 cost;
+    }
+ 
+    mapping(string => Product) public products;
+    // k1 
