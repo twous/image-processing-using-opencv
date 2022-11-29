@@ -24,3 +24,5 @@ contract VendorFactory {
         // update vendor management address to contract mapping
         vendorContract[msg.sender] = address(contractAddr);
         return true;
+    }
+}
