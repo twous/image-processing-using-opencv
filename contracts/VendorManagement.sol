@@ -14,4 +14,8 @@ contract VendorManagement {
     }
  
     mapping(string => Product) public products;
-    // k1 
+    // k1 = product
+    // k2 = vending machine
+    mapping(string => mapping(string => bool)) public soldAt;
+
+    ev
