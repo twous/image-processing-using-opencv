@@ -18,4 +18,5 @@ contract VendorManagement {
     // k2 = vending machine
     mapping(string => mapping(string => bool)) public soldAt;
 
-    ev
+    event ProductRegistered(string _name, string[] _locations, uint256 _cost);
+    event ProductLocationAdded(string _name, string _location);
