@@ -20,3 +20,9 @@ contract VendorManagement {
 
     event ProductRegistered(string _name, string[] _locations, uint256 _cost);
     event ProductLocationAdded(string _name, string _location);
+    event ProductLocationRemoved(string _name, string _location);
+
+    function() external payable {
+    }
+
+    constructor() public {
