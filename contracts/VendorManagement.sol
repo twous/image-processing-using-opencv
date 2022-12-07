@@ -28,4 +28,7 @@ contract VendorManagement {
     constructor() public {
         // we use tx.origin because this is being deployed from factory
         // as such, if we msg.sender the address will be that
+        // of the factory contract
+        id = keccak256(abi.encodePacked(tx.origin));
+        owner = tx.origin;
     
