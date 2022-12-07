@@ -26,3 +26,6 @@ contract VendorManagement {
     }
 
     constructor() public {
+        // we use tx.origin because this is being deployed from factory
+        // as such, if we msg.sender the address will be that
+    
