@@ -31,4 +31,8 @@ contract VendorManagement {
         // of the factory contract
         id = keccak256(abi.encodePacked(tx.origin));
         owner = tx.origin;
-    
+    }
+
+    function withdrawFunds() public returns (bool) {
+        require(onlyVendor(), "caller must be vendor");
+        require(address(th
