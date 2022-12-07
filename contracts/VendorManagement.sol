@@ -35,4 +35,6 @@ contract VendorManagement {
 
     function withdrawFunds() public returns (bool) {
         require(onlyVendor(), "caller must be vendor");
-        require(address(th
+        require(address(this).balance > 0, "no balance in contract");
+        require(!withdrawLock, "contract must not be withdrawing");
+        wi
