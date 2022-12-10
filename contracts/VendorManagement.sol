@@ -37,4 +37,7 @@ contract VendorManagement {
         require(onlyVendor(), "caller must be vendor");
         require(address(this).balance > 0, "no balance in contract");
         require(!withdrawLock, "contract must not be withdrawing");
-        wi
+        withdrawLock = true;
+        msg.sender.transfer(address(this).balance);
+        withdrawLock = false;
+        return 
