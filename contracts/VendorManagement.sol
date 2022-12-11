@@ -40,4 +40,8 @@ contract VendorManagement {
         withdrawLock = true;
         msg.sender.transfer(address(this).balance);
         withdrawLock = false;
-        return 
+        return true;
+    }
+
+    function registerProduct(string memory _name, string[] memory _locations, uint256 _cost) public returns (bool) {
+ 
