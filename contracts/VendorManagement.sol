@@ -44,4 +44,6 @@ contract VendorManagement {
     }
 
     function registerProduct(string memory _name, string[] memory _locations, uint256 _cost) public returns (bool) {
- 
+        require(onlyVendor(), "caller must be vendored");
+        // assign initial product name
+    
