@@ -48,4 +48,10 @@ contract VendorManagement {
         // assign initial product name
         products[_name] = Product({name: _name, cost: _cost});
         for (uint256 i = 0; i < _locations.length; i++) {
-            soldAt[_name][_
+            soldAt[_name][_locations[i]] = true;
+        }
+        emit ProductRegistered(_name, _locations, _cost);
+        return true;
+    }
+
+    function addProduc
