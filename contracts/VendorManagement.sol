@@ -54,4 +54,6 @@ contract VendorManagement {
         return true;
     }
 
-    function addProduc
+    function addProductLocation(string memory _name, string memory _location) public returns (bool) {
+        require(onlyVendor(), "caller must be vendored");
+        sol
