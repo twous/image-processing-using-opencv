@@ -61,4 +61,5 @@ contract VendorManagement {
         return true;
     }
 
-    function remov
+    function removeProductLocation(string memory _name, string memory _location) public returns (bool) {
+        require(onlyVendor(), "caller must be
