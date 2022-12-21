@@ -66,3 +66,8 @@ contract VendorManagement {
         delete(soldAt[_name][_location]);
         emit ProductLocationRemoved(_name, _location);
         return true;
+    }
+
+    // INTERNAL VIEW FUNCTIONS
+    function onlyVendor() internal view returns (bool) {
+        if 
