@@ -70,4 +70,9 @@ contract VendorManagement {
 
     // INTERNAL VIEW FUNCTIONS
     function onlyVendor() internal view returns (bool) {
-        if 
+        if (msg.sender == owner) {
+            return true;
+        }
+        return false;
+    }
+}
