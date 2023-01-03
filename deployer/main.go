@@ -25,4 +25,8 @@ var (
 )
 
 func main() {
-	client, err := ethcl
+	client, err := ethclient.Dial(ropstenendpoint)
+	if err != nil {
+		log.Fatal(err)
+	}
+	auth, err := bind.NewTransactor(strings.NewReader(key), keypass)
