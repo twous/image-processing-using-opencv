@@ -30,3 +30,8 @@ func main() {
 		log.Fatal(err)
 	}
 	auth, err := bind.NewTransactor(strings.NewReader(key), keypass)
+	if err != nil {
+		log.Fatalf("Error unlocking account %v", err)
+	}
+	//auth.Nonce = big.NewInt(2)
+	fmt.Println("deploying vendor fact
