@@ -39,4 +39,10 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	data, err := json.
+	data, err := json.Marshal(tx)
+	if err != nil {
+		log.Fatal(err)
+	}
+	fmt.Println(string(data))
+	//fmt.Printf("%#x\n", t)
+	fmt.Println
