@@ -34,4 +34,9 @@ func main() {
 		log.Fatalf("Error unlocking account %v", err)
 	}
 	//auth.Nonce = big.NewInt(2)
-	fmt.Println("deploying vendor fact
+	fmt.Println("deploying vendor factory")
+	addr, tx, _, err := bindingsf.DeployVendorfactory(auth, client)
+	if err != nil {
+		log.Fatal(err)
+	}
+	data, err := json.
