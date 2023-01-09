@@ -47,3 +47,7 @@ func main() {
 	//fmt.Printf("%#x\n", t)
 	fmt.Println("vendor factory deploy tx: ", tx.Hash().String())
 	if _, err := bind.WaitMined(context.Background(), client, tx); err != nil {
+		log.Fatal(err)
+	}
+	fmt.Println("vendor factory: ", addr)
+}
