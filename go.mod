@@ -14,4 +14,7 @@ require (
 	github.com/fjl/memsize v0.0.0-20190710130421-bcb5799ab5e5 // indirect
 	github.com/gballet/go-libpcsclite v0.0.0-20190607065134-2772fd86a8ff // indirect
 	github.com/golang/protobuf v1.3.2 // indirect
-	github.com/gorilla/we
+	github.com/gorilla/websocket v1.4.1 // indirect
+	github.com/hashicorp/golang-lru v0.5.3 // indirect
+	github.com/huin/goupnp v1.0.0 // indirect
+	github
