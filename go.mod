@@ -17,4 +17,6 @@ require (
 	github.com/gorilla/websocket v1.4.1 // indirect
 	github.com/hashicorp/golang-lru v0.5.3 // indirect
 	github.com/huin/goupnp v1.0.0 // indirect
-	github
+	github.com/jackpal/go-nat-pmp v1.0.1 // indirect
+	github.com/karalabe/usb v0.0.0-20190819132248-550797b1cad8 // indirect
+	github.com
