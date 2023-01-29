@@ -27,4 +27,6 @@ require (
 	github.com/pborman/uuid v1.2.0 // indirect
 	github.com/prometheus/tsdb v0.10.0 // indirect
 	github.com/rjeczalik/notify v0.9.2 // indirect
-	github.com/rs/cors v1.7.0 // indire
+	github.com/rs/cors v1.7.0 // indirect
+	github.com/status-im/keycard-go v0.0.0-20190424133014-d95853db0f48 // indirect
+	github.com/steakknife/bloomfilter v0.0
