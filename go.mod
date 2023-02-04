@@ -33,4 +33,6 @@ require (
 	github.com/steakknife/hamming v0.0.0-20180906055917-c99c65617cd3 // indirect
 	github.com/stretchr/testify v1.4.0 // indirect
 	github.com/syndtr/goleveldb v1.0.0 // indirect
-	github.com/tyler-smith/
+	github.com/tyler-smith/go-bip39 v1.0.2 // indirect
+	github.com/wsddn/go-ecdh v0.0.0-20161211032359-48726bab9208 // indirect
+	golang.org/x/net v0.0.0-201906
