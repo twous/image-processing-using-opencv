@@ -11,3 +11,11 @@ import (
 // for gas efficient smart contract storage
 func SumKeccak256(data []byte) [32]byte {
 	hashedData := crypto.Keccak256Hash(data)
+	var hash [32]byte
+	for i := 0; i < len(hashedData.Bytes()); i++ {
+		hash[i] = hashedData.Bytes()[i]
+	}
+	return hash
+}
+
+// FormatCID is use
