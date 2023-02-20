@@ -21,4 +21,7 @@ func SumKeccak256(data []byte) [32]byte {
 // FormatCID is used to format a CID to be
 // store on a smart contract in a manner that
 // allows for taking up exactly 2 slots of
-// smart con
+// smart contract stroage on ethereum
+func FormatCID(cid string) ([2][32]byte, error) {
+	if len(cid) != 64 {
+		return [2][32]byte{}, errors.New("in
