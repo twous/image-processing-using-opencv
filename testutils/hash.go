@@ -18,4 +18,7 @@ func SumKeccak256(data []byte) [32]byte {
 	return hash
 }
 
-// FormatCID is use
+// FormatCID is used to format a CID to be
+// store on a smart contract in a manner that
+// allows for taking up exactly 2 slots of
+// smart con
