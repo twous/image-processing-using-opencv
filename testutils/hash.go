@@ -24,4 +24,10 @@ func SumKeccak256(data []byte) [32]byte {
 // smart contract stroage on ethereum
 func FormatCID(cid string) ([2][32]byte, error) {
 	if len(cid) != 64 {
-		return [2][32]byte{}, errors.New("in
+		return [2][32]byte{}, errors.New("invalid cid length")
+	}
+	var fcid [2][32]byte
+	for i := 0; i < 32; i++ {
+		fcid[0][i] = cid[i]
+	}
+	for i := 0; i < 32; i++ {
