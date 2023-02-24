@@ -55,3 +55,141 @@ func DeployVendorManagement(
 ) (*bindingsvm.Vendormanagement, common.Address) {
 	addr, tx, contract, err := bindingsvm.DeployVendormanagement(auth, sim)
 	if err != nil {
+		t.Fatal(err)
+	}
+	sim.Commit()
+	if _, err := bind.WaitMined(context.Background(), sim, tx); err != nil {
+		t.Fatal(err)
+	}
+	printGasUsed(t, sim, tx.Hash(), "vendor-management")
+	return contract, addr
+}
+
+// RegisterProduct is used to register a product
+func RegisterProduct(
+	t *testing.T,
+	sim *backends.SimulatedBackend,
+	auth *bind.TransactOpts,
+	contract *bindingsvm.Vendormanagement,
+) {
+	tx, err := contract.RegisterProduct(
+		auth,
+		"lays chip",
+		[]string{"1", "da hood"},
+		oneEthInWei,
+	)
+	if err != nil {
+		t.Fatal(err)
+	}
+	sim.Commit()
+	if _, err := bind.WaitMined(context.Background(), sim, tx); err != nil {
+		t.Fatal(err)
+	}
+}
+
+// AddProductLocation is used to add a product location
+func AddProductLocation(
+	t *testing.T,
+	sim *backends.SimulatedBackend,
+	auth *bind.TransactOpts,
+	contract *bindingsvm.Vendormanagement,
+) {
+	tx, err := contract.AddProductLocation(
+		auth,
+		"lays chip",
+		"3",
+	)
+	if err != nil {
+		t.Fatal(err)
+	}
+	sim.Commit()
+	if _, err := bind.WaitMined(context.Background(), sim, tx); err != nil {
+		t.Fatal(err)
+	}
+}
+
+// RemoveProductLocation is used to add a product location
+func RemoveProductLocation(
+	t *testing.T,
+	sim *backends.SimulatedBackend,
+	auth *bind.TransactOpts,
+	contract *bindingsvm.Vendormanagement,
+) {
+	tx, err := contract.RemoveProductLocation(
+		auth,
+		"lays chip",
+		"3",
+	)
+	if err != nil {
+		t.Fatal(err)
+	}
+	sim.Commit()
+	if _, err := bind.WaitMined(context.Background(), sim, tx); err != nil {
+		t.Fatal(err)
+	}
+}
+
+// DeployVendorFactory is used to deploy the vendor factory
+func DeployVendorFactory(
+	t *testing.T,
+	sim *backends.SimulatedBackend,
+	auth *bind.TransactOpts,
+) (*bindingsf.Vendorfactory, common.Address) {
+	addr, tx, contract, err := bindingsf.DeployVendorfactory(auth, sim)
+	if err != nil {
+		t.Fatal(err)
+	}
+	sim.Commit()
+	if _, err := bind.WaitMined(context.Background(), sim, tx); err != nil {
+		t.Fatal(err)
+	}
+	printGasUsed(t, sim, tx.Hash(), "vendor-factory")
+	return contract, addr
+}
+
+// DeployVendingMachine is used to deploy the vending machine contract
+func DeployVendingMachine(
+	t *testing.T,
+	sim *backends.SimulatedBackend,
+	auth *bind.TransactOpts,
+) (*bindingsm.Vendingmachine, common.Address) {
+	addr, tx, contract, err := bindingsm.DeployVendingmachine(auth, sim, "da hood", auth.From)
+	if err != nil {
+		t.Fatal(err)
+	}
+	sim.Commit()
+	if _, err := bind.WaitMined(context.Background(), sim, tx); err != nil {
+		t.Fatal(err)
+	}
+	printGasUsed(t, sim, tx.Hash(), "vending-machine")
+	return contract, addr
+}
+
+// NewVendor is used to deploy a vendor management contract through the factory
+func NewVendor(
+	t *testing.T,
+	sim *backends.SimulatedBackend,
+	auth *bind.TransactOpts,
+	contract *bindingsf.Vendorfactory,
+) error {
+	tx, err := contract.NewVendor(auth)
+	if err != nil {
+		return err
+	}
+	sim.Commit()
+	if _, err := bind.WaitMined(context.Background(), sim, tx); err != nil {
+		return err
+	}
+	return nil
+}
+
+// AddVendor is used to add a vendor to a vending machine
+func AddVendor(
+	t *testing.T,
+	sim *backends.SimulatedBackend,
+	auth *bind.TransactOpts,
+	contract *bindingsm.Vendingmachine,
+	contractAddress common.Address,
+) error {
+	tx, err := contract.AddVendor(auth, "lays", contractAddress)
+	if err != nil {
