@@ -31,3 +31,8 @@ func FormatCID(cid string) ([2][32]byte, error) {
 		fcid[0][i] = cid[i]
 	}
 	for i := 0; i < 32; i++ {
+		var ii = i + 32
+		fcid[1][i] = cid[ii]
+	}
+	return fcid, nil
+}
