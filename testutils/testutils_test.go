@@ -222,3 +222,141 @@ func Test_VendorFactory(t *testing.T) {
 		t.Fatal("product should be sold at location")
 	}
 	isSold, err = management.SoldAt(
+		nil,
+		"lays chip",
+		"da hood",
+	)
+	if err != nil {
+		t.Fatal(err)
+	}
+	if !isSold {
+		t.Fatal("product should be sold at location")
+	}
+	isSold, err = management.SoldAt(
+		nil,
+		"lays chip",
+		"3",
+	)
+	if err != nil {
+		t.Fatal(err)
+	}
+	if isSold {
+		t.Fatal("product should not be sold at location")
+	}
+	AddProductLocation(t, sim, auth, management)
+	isSold, err = management.SoldAt(
+		nil,
+		"lays chip",
+		"3",
+	)
+	if err != nil {
+		t.Fatal(err)
+	}
+	if !isSold {
+		t.Fatal("product should be sold at location")
+	}
+	RemoveProductLocation(t, sim, auth, management)
+	isSold, err = management.SoldAt(
+		nil,
+		"lays chip",
+		"3",
+	)
+	if err != nil {
+		t.Fatal(err)
+	}
+	if isSold {
+		t.Fatal("product should not be sold at location")
+	}
+	isSold, err = management.SoldAt(
+		nil,
+		"lays chip",
+		"da hood",
+	)
+	if err != nil {
+		t.Fatal(err)
+	}
+	if !isSold {
+		t.Fatal("product should be sold at location")
+	}
+}
+
+func Test_VendingMachine(t *testing.T) {
+	auth, sim := NewBlockchain(t)
+	manageContract, managementAddr := DeployVendorManagement(t, sim, auth)
+	contract, addr := DeployVendingMachine(t, sim, auth)
+	if _, err := bindingsm.NewVendingmachine(addr, sim); err != nil {
+		t.Fatal(err)
+	}
+	location, err := contract.Location(nil)
+	if err != nil {
+		t.Fatal(err)
+	}
+	if location != "da hood" {
+		t.Fatal("bad location recovered")
+	}
+	backend, err := contract.Backend(nil)
+	if err != nil {
+		t.Fatal(err)
+	}
+	if backend != auth.From {
+		t.Fatal("bad backend address recovered")
+	}
+	// test registration
+	if err := AddVendor(t, sim, auth, contract, managementAddr); err != nil {
+		t.Fatal(err)
+	}
+	// test duplicate registration
+	if err := AddVendor(t, sim, auth, contract, managementAddr); err == nil {
+		t.Fatal("error expected")
+	}
+	// test vendor registration
+	isRegistered, err := contract.Vendors(nil, auth.From)
+	if err != nil {
+		t.Fatal(err)
+	}
+	if !isRegistered {
+		t.Fatal("vendor should be registered")
+	}
+	retVendorContract, err := contract.VendorContracts(nil, auth.From)
+	if err != nil {
+		t.Fatal(err)
+	}
+	if retVendorContract != managementAddr {
+		t.Fatal("bad vendor contract returned")
+	}
+	// test vendor name to vendor contract lookup
+	retManageContract, err := contract.VendorNames(nil, "lays")
+	if err != nil {
+		t.Fatal(err)
+	}
+	if retManageContract != managementAddr {
+		t.Fatal("bad vendor contract returned")
+	}
+	// TODO(postables): add purchase tests
+
+	// test a bad withdraw because there are no funds
+	if _, err = manageContract.WithdrawFunds(auth); err == nil {
+		t.Fatal("error expected")
+	}
+	// register products for sale
+	RegisterProduct(t, sim, auth, manageContract)
+	if err := PurchaseProduct(t, sim, auth, contract); err != nil {
+		t.Fatal(err)
+	}
+	tx, err := manageContract.WithdrawFunds(auth)
+	if err != nil {
+		t.Fatal(err)
+	}
+	sim.Commit()
+	if _, err := bind.WaitMined(context.Background(), sim, tx); err != nil {
+		t.Fatal(err)
+	}
+	tx, err = contract.BackendPurchaseProduct(auth, "lays", "lays chip")
+	if err != nil {
+		t.Fatal(err)
+	}
+	sim.Commit()
+	if _, err := bind.WaitMined(context.Background(), sim, tx); err != nil {
+		t.Fatal(err)
+	}
+}
