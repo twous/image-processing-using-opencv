@@ -95,3 +95,130 @@ func Test_VendorManagement(t *testing.T) {
 	if err != nil {
 		t.Fatal(err)
 	}
+	if !reflect.DeepEqual(retID, SumKeccak256(auth.From.Bytes())) {
+		t.Fatal("bad id")
+	}
+	RegisterProduct(t, sim, auth, contract)
+	isSold, err := contract.SoldAt(
+		nil,
+		"lays chip",
+		"1",
+	)
+	if err != nil {
+		t.Fatal(err)
+	}
+	if !isSold {
+		t.Fatal("product should be sold at location")
+	}
+	isSold, err = contract.SoldAt(
+		nil,
+		"lays chip",
+		"da hood",
+	)
+	if err != nil {
+		t.Fatal(err)
+	}
+	if !isSold {
+		t.Fatal("product should be sold at location")
+	}
+	isSold, err = contract.SoldAt(
+		nil,
+		"lays chip",
+		"3",
+	)
+	if err != nil {
+		t.Fatal(err)
+	}
+	if isSold {
+		t.Fatal("product should not be sold at location")
+	}
+	AddProductLocation(t, sim, auth, contract)
+	isSold, err = contract.SoldAt(
+		nil,
+		"lays chip",
+		"3",
+	)
+	if err != nil {
+		t.Fatal(err)
+	}
+	if !isSold {
+		t.Fatal("product should be sold at location")
+	}
+	RemoveProductLocation(t, sim, auth, contract)
+	isSold, err = contract.SoldAt(
+		nil,
+		"lays chip",
+		"3",
+	)
+	if err != nil {
+		t.Fatal(err)
+	}
+	if isSold {
+		t.Fatal("product should not be sold at location")
+	}
+	isSold, err = contract.SoldAt(
+		nil,
+		"lays chip",
+		"da hood",
+	)
+	if err != nil {
+		t.Fatal(err)
+	}
+	if !isSold {
+		t.Fatal("product should be sold at location")
+	}
+}
+
+func Test_VendorFactory(t *testing.T) {
+	auth, sim := NewBlockchain(t)
+	contract, addr := DeployVendorFactory(t, sim, auth)
+	if _, err := bindingsf.NewVendorfactory(addr, sim); err != nil {
+		t.Fatal(err)
+	}
+	// deploy the vendor management contract
+	if err := NewVendor(t, sim, auth, contract); err != nil {
+		t.Fatal(err)
+	}
+	// test another deploy, this should fail
+	if err := NewVendor(t, sim, auth, contract); err == nil {
+		t.Fatal("error expected")
+	}
+	// test that they're registered
+	isRegistered, err := contract.RegisteredVendors(nil, auth.From)
+	if err != nil {
+		t.Fatal(err)
+	}
+	if !isRegistered {
+		t.Fatal("vendor should be registered")
+	}
+	// get the management contract address from the vendor address
+	managementAddr, err := contract.VendorContract(nil, auth.From)
+	if err != nil {
+		t.Fatal(err)
+	}
+	// construct management contract wrapping
+	management, err := bindingsvm.NewVendormanagement(managementAddr, sim)
+	if err != nil {
+		t.Fatal(err)
+	}
+	// conduct all vendor management tests
+	retID, err := management.Id(nil)
+	if err != nil {
+		t.Fatal(err)
+	}
+	if !reflect.DeepEqual(retID, SumKeccak256(auth.From.Bytes())) {
+		t.Fatal("bad id")
+	}
+	RegisterProduct(t, sim, auth, management)
+	isSold, err := management.SoldAt(
+		nil,
+		"lays chip",
+		"1",
+	)
+	if err != nil {
+		t.Fatal(err)
+	}
+	if !isSold {
+		t.Fatal("product should be sold at location")
+	}
+	isSold, err = management.SoldAt(
